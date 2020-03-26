@@ -186,7 +186,7 @@ public class MainUserFragment extends BaseRefreshMvvmFragment<UserFragmentMainBi
             ToastUtil.showToast("已是最新版本");
         } else if (id == R.id.cl_gy || id == R.id.iv_user) {
             RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
-                    .withString(KeyCode.Discover.PATH, "http://www.housaiying.icoc.bz/"));
+                    .withString(KeyCode.Discover.PATH, "https://github.com/shuaixiaohou"));
         } else if (id == R.id.cl_zx) {
             new AlertDialog.Builder(mActivity)
                     .setMessage("您确定要注销登录吗?")

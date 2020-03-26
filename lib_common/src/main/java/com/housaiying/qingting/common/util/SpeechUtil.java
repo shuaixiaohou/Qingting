@@ -25,12 +25,6 @@ public class SpeechUtil {
                 JSONArray items = words.getJSONObject(i).getJSONArray("cw");
                 JSONObject obj = items.getJSONObject(0);
                 ret.append(obj.getString("w"));
-//				如果需要多候选结果，解析数组其他字段
-//				for(int j = 0; j < items.length(); j++)
-//				{
-//					JSONObject obj1 = items.getJSONObject(j);
-//					ret.append(obj1.getString("w"));
-//				}
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -104,11 +98,6 @@ public class SpeechUtil {
             }
             JSONObject transResult = joResult.optJSONObject("trans_result");
             ret.append(transResult.optString(key));
-			/*JSONArray words = joResult.getJSONArray("results");
-			for (int i = 0; i < words.length(); i++) {
-				JSONObject obj = words.getJSONObject(i);
-				ret.append(obj.getString(key));
-			}*/
         } catch (Exception e) {
             e.printStackTrace();
         }

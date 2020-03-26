@@ -65,30 +65,7 @@ public final class SystemUtil {
         am.getMemoryInfo(mi);
         return mi.totalMem;// 将获取的内存大小规格化
     }
-
-    /**
-     * 清除缓存，重启app
-     *
-     * @param context
-     */
-//    public static void restartApp(Context context) {
-//
-//        Intent intent = new Intent(context, MainActivity.class);
-//        PendingIntent restartIntent = PendingIntent.getActivity(
-//                context, 0, intent, 0);
-//        AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-//        if (mgr != null) {
-//            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 5* 1000,
-//                    restartIntent);
-//        }
-//        if (ActivityUtils.getTopActivity() != null)
-//            ActivityUtils.getTopActivity().finish();
-//        MainService.stopService(context);
-//        //结束进程之前可以把你程序的注销或者退出代码放在这段代码之前
-//        android.os.Process.killProcess(android.os.Process.myPid());
-//    }
-
-    /**
+     /**
      * 获得SD卡总大小
      *
      * @return
@@ -148,12 +125,6 @@ public final class SystemUtil {
      * @return
      */
     public static String getLocalMac(Context context) {
-//        WifiManager wifi = (WifiManager) context
-//                .getSystemService(Context.WIFI_SERVICE);
-//        WifiInfo info = wifi.getConnectionInfo();
-//        return info.getMacAddress();
-
-
         String macAddress = null;
         StringBuffer buf = new StringBuffer();
         NetworkInterface networkInterface = null;
