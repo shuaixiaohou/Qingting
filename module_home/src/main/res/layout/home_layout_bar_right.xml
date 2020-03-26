@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_msg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="2dp"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingEnd="12dp">
+
+    <ImageView
+        android:id="@+id/iv_history"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/ic_common_history" />
+
+    <ImageView
+        android:id="@+id/iv_download"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/ic_common_download" />
+</LinearLayout>
+

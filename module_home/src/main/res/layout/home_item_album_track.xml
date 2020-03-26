@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="68dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@color/colorDefault"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/c"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+
+        app:bl_corners_radius="20dp"
+        app:bl_solid_color="#77000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_common_play"
+        android:tint="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/iv_cover"
+        app:layout_constraintEnd_toEndOf="@+id/iv_cover"
+        app:layout_constraintStart_toStartOf="@+id/iv_cover"
+        app:layout_constraintTop_toTopOf="@id/iv_cover" />
+
+    <LinearLayout
+        android:id="@+id/textView32"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/tv_create_time"
+        app:layout_constraintStart_toEndOf="@+id/iv_cover"
+        app:layout_constraintTop_toTopOf="@+id/iv_cover">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lav_playing"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            app:lottie_colorFilter="@color/colorPrimary"
+            app:lottie_fileName="lottie_playing.json"
+            app:lottie_loop="true" />
+
+        <!--      <ImageView
+                  android:id="@+id/iv_playing"
+                  android:layout_width="24dp"
+                  android:layout_height="24dp"
+                  android:tint="@color/colorPrimary"
+                  android:src="@drawable/ic_home_playing" />-->
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="伦桑part1"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_common_play"
+        android:tint="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/tv_playcount"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="152万"
+        android:textColor="@color/colorGray"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
+        android:src="@drawable/ic_common_history"
+        android:tint="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_playcount"
+        app:layout_constraintStart_toEndOf="@+id/tv_playcount"
+        app:layout_constraintTop_toTopOf="@+id/imageView14" />
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="1:12:50"
+        android:textColor="@color/colorGray"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintStart_toEndOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
+
+    <TextView
+        android:id="@+id/tv_create_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="2016-04"
+        android:textColor="#999999"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView32" />
+
+    <ImageView
+        android:id="@+id/iv_download"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_home_track_download"
+        android:tint="@color/textColorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_create_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_time" />
+
+    <ImageView
+        android:id="@+id/iv_paid"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_common_paid"
+        android:tint="@color/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_create_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_time" />
+
+    <ImageView
+        android:id="@+id/iv_downloadsucc"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/ic_common_succ"
+        android:tint="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_create_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_time" />
+
+    <TextView
+        android:id="@+id/tv_hasplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_duration"
+        app:layout_constraintStart_toEndOf="@+id/tv_duration"
+        app:layout_constraintTop_toTopOf="@+id/tv_duration"
+        tools:text="已播2%" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_create_time"
+        app:layout_constraintTop_toBottomOf="@+id/tv_create_time" />
+
+    <TextView
+        android:id="@+id/tv_index"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_cover"
+        app:layout_constraintEnd_toEndOf="@+id/iv_cover"
+        app:layout_constraintStart_toStartOf="@+id/iv_cover"
+        app:layout_constraintTop_toTopOf="@+id/iv_cover" />
+
+    <View
+        style="@style/SecondHLine"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView14" />
+</androidx.constraintlayout.widget.ConstraintLayout>

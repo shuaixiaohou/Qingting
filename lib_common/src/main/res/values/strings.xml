@@ -1,0 +1,21 @@
+<resources>
+    <string name="ji">%d集</string>
+    <string name="ci">播放:%s次</string>
+    <string name="zhuanji">%s张专辑</string>
+    <string name="zhubo">主播:%s</string>
+    <string name="gong_ji">数量:共%d集</string>
+    <string name="sb">订阅:%s</string>
+    <string name="playing">正在直播: %s</string>
+    <string name="qian">%s前</string>
+    <string name="update">%d更新</string>
+    <string name="download">已下载:%d</string>
+    <string name="hasplay">已播:%d%%</string>
+    <string name="memory">已占用%s，可用%s</string>
+    <string name="lastplay">上次播放：%s</string>
+    <string name="favorite_count">喜欢%s</string>
+    <string name="following_count">已被%s人关注</string>
+    <string name="comment_count">评论%s</string>
+    <string name="pagecount">选集(%d)</string>
+    <string name="playcount_createtime">%s次播放</string>
+    <string name="selected_num">共选了%d条声音,占用%s，可用空间%s</string>
+</resources>

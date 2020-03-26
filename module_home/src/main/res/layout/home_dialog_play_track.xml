@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <LinearLayout
+            android:id="@+id/ll_shuxu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_shunxu"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="4dp"
+                android:tint="@color/colorPrimaryDark"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_pagecount"
+                app:layout_constraintStart_toEndOf="@+id/tv_pagecount"
+                app:layout_constraintTop_toTopOf="@+id/tv_pagecount"
+                tools:src="@drawable/ic_home_play_shunxu" />
+
+            <TextView
+                android:id="@+id/tv_shunxu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="12sp"
+                tools:text="顺序播放" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_sort"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/ic_common_paixu"
+                android:tint="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/tv_sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="排序"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        style="@style/SecondHLine"
+        android:layout_width="match_parent" />
+
+    <include
+        layout="@layout/common_layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+
+    <View
+        style="@style/SecondHLine"
+        android:layout_width="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="关闭"
+        android:textColor="@color/colorGray"
+        android:textSize="16sp" />
+</LinearLayout>
