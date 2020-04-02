@@ -35,7 +35,6 @@ Module的属性是在每个组件的 build.gradle 文件中配置的，当我们
 ```
 isModule=false
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190530142030271.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9tZW54aW5kaWFvbG9uZy5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
 ```
 if (isModule.toBoolean()) {
     apply plugin: 'com.android.application'
@@ -43,11 +42,9 @@ if (isModule.toBoolean()) {
     apply plugin: 'com.android.library'
 }
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190530142043496.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9tZW54aW5kaWFvbG9uZy5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
 ### 组件之间AndroidManifest合并问题
 我们可以为组件开发模式下的业务组件再创建一个 AndroidManifest.xml，然后根据isModule指定AndroidManifest.xml的文件路径，让业务组件在集成模式和组件模式下使用不同的AndroidManifest.xml，这样表单冲突的问题就可以规避了
 已module_main组件为例配置如下：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190530150350275.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9tZW54aW5kaWFvbG9uZy5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
 ```
 sourceSets {
         main {
@@ -59,12 +56,6 @@ sourceSets {
         }
 }
 ```
-### 组件模式下的Application
-在每个组件的debug目录下创建一个Application并在module下的AndroidManifest.xml进行配置
-配图：
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190530142154452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9tZW54aW5kaWFvbG9uZy5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
-### 集成开发模式下的Application
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190530150933283.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9tZW54aW5kaWFvbG9uZy5ibG9nLmNzZG4ubmV0,size_16,color_FFFFFF,t_70)
 ### 主要用到的开源库
 * 快速切面编程开源库 
 * 喜马拉雅SDK http://open.ximalaya.com/
@@ -81,8 +72,7 @@ sourceSets {
 * 感谢所有开源库的大佬
 * mvvm借鉴 https://github.com/geduo83/FlyTour 
 * 原型平台 https://www.xiaopiu.com/
-### 开源项目
-* 快速切面编程开源库  
+* 快速切面编程开源库
 * 骨架屏弹性块 
 * RxPersistence是基于面向对象设计的快速持久化框架 
 * greenDao Converter自动生成器 
