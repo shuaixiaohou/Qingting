@@ -6,7 +6,7 @@ import com.blankj.utilcode.util.TimeUtils;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.listen.R;
 import com.housaiying.qingting.listen.bean.PlayHistoryItem;
 import com.ximalaya.ting.android.opensdk.model.live.schedule.Schedule;
@@ -39,7 +39,7 @@ public class HistoryAdapter extends BaseMultiItemQuickAdapter<PlayHistoryItem, B
                 Glide.with(mContext).load(track.getCoverUrlMiddle()).into((ImageView) helper.getView(R.id.iv_cover));
                 helper.setText(R.id.tv_title, track.getAlbum().getAlbumTitle());
                 helper.setText(R.id.tv_album, track.getTrackTitle());
-                helper.setText(R.id.tv_duration, ZhumulangmaUtil.secondToTime(track.getDuration()));
+                helper.setText(R.id.tv_duration, QingTingUtil.secondToTime(track.getDuration()));
                 helper.setText(R.id.tv_hasplay, mContext.getString(R.string.hasplay, item.data.getPercent()));
                 break;
             case PlayHistoryItem.SCHEDULE:

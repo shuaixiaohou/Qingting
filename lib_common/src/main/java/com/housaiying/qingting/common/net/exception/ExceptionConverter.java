@@ -21,7 +21,7 @@ import retrofit2.HttpException;
 public class ExceptionConverter {
 
     public static Exception convert(Throwable e) {
-        String msg;
+        String msg = null;
         if (e instanceof HttpException) {
             HttpException httpException = (HttpException) e;
             switch (String.valueOf(httpException.code())) {
@@ -63,8 +63,6 @@ public class ExceptionConverter {
             msg = "主机地址未知";
         } else if (e instanceof ClassCastException) {
             msg = "类型转换异常";
-        } else {
-            msg = "未知异常";
         }
         return new Exception(msg);
     }

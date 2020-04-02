@@ -63,8 +63,8 @@
                             android:id="@+id/iv_avatar"
                             android:layout_width="68dp"
                             android:layout_height="68dp"
-                            android:layout_marginStart="20dp"
-                            android:src="@drawable/ic_user_avatar"
+                            android:layout_marginStart="100dp"
+                            android:src="@drawable/user_tx"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -72,26 +72,13 @@
                             app:riv_border_width="3dp"
                             app:riv_oval="true" />
 
-                        <ImageView
-                            android:id="@+id/iv_user"
-                            android:layout_width="28dp"
-                            android:layout_height="28dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="16dp"
-                            android:layout_marginBottom="8dp"
-                            android:src="@drawable/ic_common_more_arrow"
-                            android:tint="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
                         <TextView
                             android:id="@+id/tv_nickname"
                             android:layout_width="wrap_content"
                             android:layout_height="36dp"
                             android:layout_marginStart="8dp"
                             android:gravity="center_vertical"
-                            android:text="未登陆"
+                            android:text="听客54562"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             app:layout_constraintStart_toEndOf="@+id/iv_avatar"
@@ -117,7 +104,7 @@
                             android:layout_marginStart="4dp"
                             android:layout_marginBottom="8dp"
                             android:gravity="center"
-                            android:text="0"
+                            android:text="445"
                             android:textColor="@color/white"
                             android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
@@ -160,7 +147,7 @@
                             android:layout_marginStart="4dp"
                             android:layout_marginBottom="8dp"
                             android:gravity="center"
-                            android:text="0"
+                            android:text="544"
                             android:textColor="@color/white"
                             android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
@@ -193,7 +180,7 @@
                             android:ellipsize="end"
                             android:gravity="bottom"
                             android:maxLines="2"
-                            android:text="这个人很懒,什么都没留下..."
+                            android:text="听书听课听段子，想听啥都有"
                             android:textColor="@color/white"
                             android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -315,7 +302,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <LinearLayout
-                        android:id="@+id/l"
+                        android:id="@+id/ly"
                         android:layout_width="315dp"
                         android:layout_height="45dp"
                         android:layout_marginStart="8dp"
@@ -339,7 +326,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="2dp"
-                            android:text="开始录音"
+                            android:text="一键搜你想听"
                             android:textColor="@color/white"
                             android:textSize="14sp" />
                     </LinearLayout>
@@ -349,255 +336,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:orientation="vertical"
-                        app:layout_constraintTop_toBottomOf="@id/l">
-
-                        <View
-                            style="@style/SecondHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cl_sc"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user5"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_zbgzt" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="主播工作台"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user5"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user5"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user5" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            style="@style/SecondHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cl_wdzp"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user1"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_wdzp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="我的作品"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user1"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user1"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user1" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            style="@style/PrimaryHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user2"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_wddfhy" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="我的巅峰会员"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user2"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user2"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user2" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            style="@style/PrimaryHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user3"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_wdyg" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="我的已购"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user3"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user3"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user3" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            style="@style/SecondHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user6"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_wdqb" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="我的钱包"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user6"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user6"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user6" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <View
-                            style="@style/SecondHLine"
-                            android:layout_width="match_parent" />
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp">
-
-                            <ImageView
-                                android:id="@+id/iv_user7"
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginLeft="16dp"
-                                android:tint="#cccccc"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintLeft_toLeftOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_user_wdyhq" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="4dp"
-                                android:text="我的优惠券"
-                                android:textColor="@color/textColorPrimary"
-                                android:textSize="14sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/iv_user7"
-                                app:layout_constraintStart_toEndOf="@+id/iv_user7"
-                                app:layout_constraintTop_toTopOf="@+id/iv_user7" />
-
-                            <ImageView
-                                android:layout_width="23dp"
-                                android:layout_height="23dp"
-                                android:layout_marginRight="5dp"
-                                android:tint="@color/colorPrimaryDark"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintRight_toRightOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/ic_common_more_arrow" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        app:layout_constraintTop_toBottomOf="@id/ly">
 
                         <View
                             style="@style/SecondHLine"
@@ -623,7 +362,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="分享赚钱"
+                                android:text="分享好友"
                                 android:textColor="@color/textColorPrimary"
                                 android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="@+id/iv_user8"
@@ -809,16 +548,6 @@
                                 app:layout_constraintRight_toRightOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/ic_common_more_arrow" />
-
-                            <View
-                                android:layout_width="8dp"
-                                android:layout_height="8dp"
-                                android:layout_marginRight="4dp"
-                                app:bl_corners_radius="20dp"
-                                app:bl_solid_color="#ff0000"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/iv_user13"
-                                app:layout_constraintTop_toTopOf="parent" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <View
@@ -845,7 +574,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="4dp"
-                                android:text="注销登录"
+                                android:text="关闭应用"
                                 android:textColor="@color/textColorPrimary"
                                 android:textSize="14sp"
                                 app:layout_constraintBottom_toBottomOf="@+id/iv_user14"

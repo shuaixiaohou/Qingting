@@ -11,7 +11,7 @@ import com.housaiying.qingting.common.bean.SubscribeBean;
 import com.housaiying.qingting.common.db.FavoriteBeanDao;
 import com.housaiying.qingting.common.db.SubscribeBeanDao;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
@@ -32,7 +32,7 @@ import io.reactivex.functions.Function;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class PlayTrackViewModel extends BaseViewModel<ZhumulangmaModel> {
+public class PlayTrackViewModel extends BaseViewModel<QingTingModel> {
 
     private SingleLiveEvent<List<Album>> mAlbumsEvent;
     private SingleLiveEvent<Boolean> mSubscribeEvent;
@@ -41,7 +41,7 @@ public class PlayTrackViewModel extends BaseViewModel<ZhumulangmaModel> {
     private SingleLiveEvent<SparseArray> mScheduleTimeEvent;
 
 
-    public PlayTrackViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public PlayTrackViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

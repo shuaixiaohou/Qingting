@@ -3,13 +3,11 @@ package com.housaiying.qingting.common.util;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.housaiying.qingting.common.Constants;
-import com.housaiying.qingting.common.aop.LoginHelper;
 import com.housaiying.qingting.common.bean.NavigateBean;
 import com.housaiying.qingting.common.event.ActivityEvent;
 import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.mvvm.view.SupportActivity;
 import com.housaiying.qingting.common.mvvm.view.SupportFragment;
-import com.ximalaya.ting.android.opensdk.datatrasfer.AccessTokenManager;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -74,14 +72,6 @@ public class RouterUtil {
         Objects.requireNonNull(navigateBean);
         Objects.requireNonNull(navigateBean.fragment);
         switch (navigateBean.path) {
-            case Constants.Router.User.F_MESSAGE:
-                //登录拦截
-                if (!AccessTokenManager.getInstanse().hasLogin()) {
-                    LoginHelper.getInstance().login(activity);
-                } else {
-                    activity.start(navigateBean.fragment);
-                }
-                break;
             case Constants.Router.Home.F_PLAY_TRACK:
             case Constants.Router.Home.F_PLAY_RADIIO:
                 activity.extraTransaction().setCustomAnimations(

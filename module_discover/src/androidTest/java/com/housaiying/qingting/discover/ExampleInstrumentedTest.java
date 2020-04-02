@@ -20,8 +20,7 @@ public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.gykj.waterdemo.module_task.test", appContext.getPackageName());
+        Context appContext = InstrumentationRegistry.getInstrumentation().getContext();
+        assertEquals("com.housaiying.waterdemo.module_task.test", appContext.getPackageName());
     }
 }

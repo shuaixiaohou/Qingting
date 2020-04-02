@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -27,13 +27,13 @@ import java.util.Map;
 import io.reactivex.ObservableSource;
 import io.reactivex.functions.Function;
 
-public class AnnouncerViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Announcer> {
+public class AnnouncerViewModel extends BaseRefreshViewModel<QingTingModel, Announcer> {
 
     private SingleLiveEvent<List<BannerV2>> mBannerV2Event;
     private SingleLiveEvent<List<Announcer>> mInitAnnouncerEvent;
     private int curPage = 1;
 
-    public AnnouncerViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public AnnouncerViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

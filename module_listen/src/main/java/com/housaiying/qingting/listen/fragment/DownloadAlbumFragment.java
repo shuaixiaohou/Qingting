@@ -15,8 +15,8 @@ import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.event.FragmentEvent;
 import com.housaiying.qingting.common.event.KeyCode;
 import com.housaiying.qingting.common.mvvm.view.BaseFragment;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.listen.R;
 import com.housaiying.qingting.listen.adapter.DownloadTrackAdapter;
 import com.housaiying.qingting.listen.databinding.ListenFragmentDownloadAlbumBinding;
@@ -149,7 +149,7 @@ public class DownloadAlbumFragment extends BaseFragment<ListenFragmentDownloadAl
 
         mBinding.tvName.setText(mAlbum.getAlbumTitle());
 
-        mBinding.tvSize.setText(ZhumulangmaUtil.byte2FitMemorySize(mAlbum.getDownloadTrackSize()));
+        mBinding.tvSize.setText(QingTingUtil.byte2FitMemorySize(mAlbum.getDownloadTrackSize()));
         List<Track> trackInAlbum = XmDownloadManager.getInstance().getDownloadTrackInAlbum(mAlbumId, true);
         Collections.sort(trackInAlbum, ComparatorUtil.comparatorByDownloadOverTime(true));
         mBinding.tvAuthor.setText(trackInAlbum.get(0).getAnnouncer().getNickname());

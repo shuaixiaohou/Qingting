@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.home.fragment.RadioListFragment;
@@ -25,7 +25,7 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class RadioListViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Radio> {
+public class RadioListViewModel extends BaseRefreshViewModel<QingTingModel, Radio> {
 
     public static final String COUNTRY = "1";
     public static final String PROVINCE = "2";
@@ -36,7 +36,7 @@ public class RadioListViewModel extends BaseRefreshViewModel<ZhumulangmaModel, R
     private int mProvinceCode;
     private int mType;
 
-    public RadioListViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public RadioListViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

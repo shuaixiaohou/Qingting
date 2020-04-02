@@ -284,7 +284,7 @@ public class HotFragment extends BaseRefreshMvvmFragment<HomeFragmentHotBinding,
             RouterUtil.navigateTo(Constants.Router.Home.F_RANK);
         } else if (id == R.id.layout_ad) {
             RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
-                    .withString(KeyCode.Discover.PATH, "https://m.ximalaya.com/"));
+                    .withString(KeyCode.Discover.PATH, "https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1"));
         }
     }
 }

@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.housaiying.qingting.common.aop.PointHelper;
 import com.housaiying.qingting.common.bean.PlayHistoryBean;
 import com.housaiying.qingting.common.db.DBManager;
 import com.housaiying.qingting.common.net.RxAdapter;
@@ -189,6 +188,7 @@ public class App extends MultiDexApplication {
         return instance;
     }
 
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -205,11 +205,9 @@ public class App extends MultiDexApplication {
                     .initFragmentation(false)
                     .initSpeech()
                     .initAgentWebX5()
-                    .initAspectj(new PointHelper(this))
                     .initUM()
                     .initRouter()
-                    .initUtils()
-                    .initCrashView();
+                    .initUtils();
             AppHelper.getInstance(this)
                     .initLog()
                     .initXmly()

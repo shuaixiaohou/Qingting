@@ -58,8 +58,8 @@ import io.reactivex.functions.Function;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:珠穆朗玛接口Model
  */
-public class ZhumulangmaModel extends BaseModel {
-    public ZhumulangmaModel(Application application) {
+public class QingTingModel extends BaseModel {
+    public QingTingModel(Application application) {
         super(application);
     }
 

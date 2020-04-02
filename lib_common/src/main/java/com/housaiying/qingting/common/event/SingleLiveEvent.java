@@ -28,21 +28,16 @@ import androidx.lifecycle.Observer;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * A lifecycle-aware observable that sends only new updates after subscription, used for events like
- * navigation and Snackbar messages.
- * <p>
- * This avoids a common problem with events: on configuration change (like rotation) an update
- * can be emitted if the observer is active. This LiveData only calls the observable if there's an
- * explicit call to setValue() or call().
- * <p>
- * Note that only one observer is going to be notified of changes.
+ * 在订阅后只发送新更新的具有生命周期意识的可观察对象，用于
+ * 导航和Snackbar消息。
+ * 这避免了事件的一个常见问题：配置更改（如旋转）时更新
+ * 如果观察者处于活动状态，则可以发射。这个LiveData只在\
+ * 显式调用setValue（）或call（）。
+ * 请注意，只有一个观察者会收到变更通知。
  */
 public class SingleLiveEvent<T> extends MutableLiveData<T> {
-
     private static final String TAG = "SingleLiveEvent";
-
     private final AtomicBoolean mPending = new AtomicBoolean(false);
-
 
     @MainThread
     @Override

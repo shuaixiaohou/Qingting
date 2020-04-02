@@ -655,44 +655,6 @@
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
 
-        <!--<com.gykj.thomas.zhumulangma.widget.CommonTitleBar-->
-        <!--android:id="@+id/ctb_trans"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="top"-->
-        <!--app:bottomShadowHeight="0dp"-->
-        <!--app:centerText=""-->
-        <!--app:centerTextColor="@color/transparent"-->
-        <!--app:centerTextSize="16sp"-->
-        <!--app:centerType="textView"-->
-        <!--app:fillStatusBar="true"-->
-        <!--app:leftCustomView="@layout/layout_track_play_bar_left"-->
-        <!--app:leftType="customView"-->
-        <!--app:rightCustomView="@layout/layout_track_play_bar_right"-->
-        <!--app:rightType="customView"-->
-        <!--app:showBottomLine="false"-->
-        <!--app:statusBarColor="@color/transparent"-->
-        <!--app:titleBarColor="@color/transparent"-->
-        <!--app:titleBarHeight="50dp" />-->
-
-        <!--<com.gykj.thomas.zhumulangma.widget.CommonTitleBar-->
-        <!--android:id="@+id/ctb_white"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="top"-->
-        <!--app:bottomShadowHeight="0dp"-->
-        <!--app:centerTextColor="#000000"-->
-        <!--app:centerTextSize="16sp"-->
-        <!--app:centerText="歌曲详情"-->
-        <!--app:centerType="textView"-->
-        <!--app:fillStatusBar="true"-->
-        <!--android:alpha="0"-->
-        <!--app:leftCustomView="@layout/layout_detail_bar_left"-->
-        <!--app:leftType="customView"-->
-        <!--app:rightCustomView="@layout/layout_detail_bar_right"-->
-        <!--app:rightType="customView"-->
-        <!--android:background="@color/white"-->
-        <!--app:titleBarHeight="50dp" />-->
         <com.wuhenzhizao.titlebar.widget.CommonTitleBar
             android:id="@+id/ctb_trans"
             android:layout_width="match_parent"

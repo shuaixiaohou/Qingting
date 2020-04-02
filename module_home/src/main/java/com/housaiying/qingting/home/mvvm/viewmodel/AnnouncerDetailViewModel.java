@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -28,14 +28,14 @@ import io.reactivex.functions.Function;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class AnnouncerDetailViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Object> {
+public class AnnouncerDetailViewModel extends BaseRefreshViewModel<QingTingModel, Object> {
 
     private SingleLiveEvent<Announcer> mAnnouncerEvent;
     private SingleLiveEvent<AlbumList> mAlbumListEvent;
     private SingleLiveEvent<AnnouncerTrackList> mTrackListEvent;
     private long mAnnouncerId;
 
-    public AnnouncerDetailViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public AnnouncerDetailViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

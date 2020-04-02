@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -33,7 +33,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.Functions;
 
-public class HotViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album> {
+public class HotViewModel extends BaseRefreshViewModel<QingTingModel, Album> {
     private SingleLiveEvent<List<BannerV2>> mBannerV2Event;
     private SingleLiveEvent<List<Album>> mLikesEvent;
     private SingleLiveEvent<List<Album>> mStorysEvent;
@@ -51,7 +51,7 @@ public class HotViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album> 
     private int curMusicPage = 1;
     private int curRadioPage = 1;
 
-    public HotViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public HotViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

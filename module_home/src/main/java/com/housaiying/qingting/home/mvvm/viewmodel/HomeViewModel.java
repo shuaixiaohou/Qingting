@@ -5,7 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.word.HotWord;
@@ -20,10 +20,10 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class HomeViewModel extends BaseViewModel<ZhumulangmaModel> {
+public class HomeViewModel extends BaseViewModel<QingTingModel> {
     private SingleLiveEvent<List<HotWord>> mHotWordsEvent;
 
-    public HomeViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public HomeViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
 
     }

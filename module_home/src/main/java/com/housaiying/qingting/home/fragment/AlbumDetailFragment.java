@@ -27,9 +27,9 @@ import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.event.KeyCode;
 import com.housaiying.qingting.common.mvvm.view.BaseRefreshMvvmFragment;
 import com.housaiying.qingting.common.mvvm.view.status.DetailSkeleton;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.AlbumTagAdapter;
 import com.housaiying.qingting.home.adapter.AlbumTrackAdapter;
@@ -215,9 +215,9 @@ public class AlbumDetailFragment extends BaseRefreshMvvmFragment<HomeFragmentAlb
         mBinding.viewpager.setCurrentItem(1);
 
         mAlbumTrackAdapter = new AlbumTrackAdapter(R.layout.home_item_album_track);
-        mTrackBind.includeList.recyclerview.setLayoutManager(new LinearLayoutManager(mActivity));
-        mTrackBind.includeList.recyclerview.setHasFixedSize(true);
-        mAlbumTrackAdapter.bindToRecyclerView(mTrackBind.includeList.recyclerview);
+        mTrackBind.recyclerview.setLayoutManager(new LinearLayoutManager(mActivity));
+        mTrackBind.recyclerview.setHasFixedSize(true);
+        mAlbumTrackAdapter.bindToRecyclerView(mTrackBind.recyclerview);
         mPagerPopup = new TrackPagerPopup(mActivity, this);
         mPagerPopup.setDismissingListener(this);
     }
@@ -282,7 +282,7 @@ public class AlbumDetailFragment extends BaseRefreshMvvmFragment<HomeFragmentAlb
     @NonNull
     @Override
     protected WrapRefresh onBindWrapRefresh() {
-        return new WrapRefresh(mTrackBind.includeList.refreshLayout, mAlbumTrackAdapter);
+        return new WrapRefresh(mTrackBind.refreshLayout, mAlbumTrackAdapter);
     }
 
     @Override
@@ -306,11 +306,11 @@ public class AlbumDetailFragment extends BaseRefreshMvvmFragment<HomeFragmentAlb
             mBinding.tvAuthor.setText((String.format(getResources().getString(R.string.zhubo),
                     mAlbum.getAnnouncer().getNickname())));
             mBinding.tvPlaycount.setText(String.format(getResources().getString(R.string.ci)
-                    , ZhumulangmaUtil.toWanYi(mAlbum.getPlayCount())));
+                    , QingTingUtil.toWanYi(mAlbum.getPlayCount())));
             mBinding.tvTrackcount.setText(String.format(getResources().getString(R.string.gong_ji),
                     mAlbum.getIncludeTrackCount()));
             mBinding.tvSbcount.setText(String.format(getResources().getString(R.string.sb)
-                    , ZhumulangmaUtil.toWanYi(mAlbum.getSubscribeCount())));
+                    , QingTingUtil.toWanYi(mAlbum.getSubscribeCount())));
 
             Glide.with(this).load(album.getAnnouncer().getAvatarUrl()).into(mDetailBind.includeAnnouncer.ivAnnouncerCover);
             mDetailBind.includeAnnouncer.tvAnnouncerName.setText(album.getAnnouncer().getNickname());
@@ -358,7 +358,7 @@ public class AlbumDetailFragment extends BaseRefreshMvvmFragment<HomeFragmentAlb
                 mDetailBind.includeAnnouncer.tvVsignature.setText(vsignature);
             }
             mDetailBind.includeAnnouncer.tvFollowingCount.setText(getString(R.string.following_count,
-                    ZhumulangmaUtil.toWanYi(announcer.getFollowerCount())));
+                    QingTingUtil.toWanYi(announcer.getFollowerCount())));
         });
     }
 

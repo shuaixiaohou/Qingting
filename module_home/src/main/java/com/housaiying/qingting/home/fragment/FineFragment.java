@@ -83,7 +83,7 @@ public class FineFragment extends BaseRefreshMvvmFragment<HomeFragmentFineBindin
     @Override
     public void initData() {
         mViewModel.init();
-        String notice = "本页面为付费内容,目前仅提供浏览功能,暂时不可操作!";
+        String notice = "本页面为付费内容,大部分内容仅提供浏览功能,暂时不可操作!";
         mBinding.marqueeView.setContent(notice);
     }
 

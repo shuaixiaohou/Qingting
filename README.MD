@@ -17,10 +17,6 @@
 * 主播展示
 * 声音下载
 * 历史播放展示及播放
-### 待完善(包括不仅限于):
-* 优化UI
-* 优化性能
-* 修复bug
 ### 项目架构
 本项目采用retrofit+rxjava2+rxandroid+arouter+mvvm+fragmentation实现单activity多fragme组件化架构
 * app：负责管理各个业务组件，和打包apk，没有具体的业务功能；
@@ -32,7 +28,7 @@
 * module_discover：发现,包括后续扩展功能等；
 * module_user：用户管理模块;
 ### 组件化实现：
-珠穆朗玛FM客户端使用阿里ARouter作为路由，实现组件与组件的通信跳转
+倾听使用阿里ARouter作为路由，实现组件与组件的通信跳转
 ### 集成模式和组件模式转换
 Module的属性是在每个组件的 build.gradle 文件中配置的，当我们在组件模式开发时，业务组件应处于application属性，这时的业务组件就是一个 Android App，可以独立开发和调试；而当我们转换到集成模式开发时，业务组件应该处于 library 属性，这样才能被我们的“app壳工程”所依赖，组成一个具有完整功能的APP
 先打开工程的根目录下找到gradle.properties 文件，然后将 isModule 改为你需要的开发模式（true/false）， 然后点击 "Sync Project" 按钮同步项目

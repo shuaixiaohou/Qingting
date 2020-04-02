@@ -138,7 +138,6 @@ public class GlobalPlay extends View implements ValueAnimator.AnimatorUpdateList
     }
 
     public void play(String avatarUrl) {
-
         GlideApp.with(this)
                 .load(avatarUrl)
                 .error(R.drawable.notification_default)

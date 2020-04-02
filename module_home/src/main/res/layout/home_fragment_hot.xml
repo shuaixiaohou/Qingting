@@ -80,7 +80,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="排行榜"
+                                    android:text="经典必听"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -109,7 +109,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="精品"
+                                    android:text="助眠解压"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -138,7 +138,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="巅峰会员"
+                                    android:text="情感生活"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -167,7 +167,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="听清远"
+                                    android:text="热门音乐"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -196,7 +196,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="小雅音响"
+                                    android:text="免费小说"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -225,7 +225,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="听单"
+                                    android:text="英语学习"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -254,7 +254,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="今日必听"
+                                    android:text="相声评书"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -283,7 +283,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="边听边读"
+                                    android:text="笑话段子"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -312,7 +312,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="18dp"
                                     android:gravity="center"
-                                    android:text="热门分享"
+                                    android:text="儿童故事"
                                     android:textColor="@color/textColorPrimary"
                                     android:textSize="12sp" />
                             </LinearLayout>

@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -30,7 +30,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.internal.functions.Functions;
 
-public class FineViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album> {
+public class FineViewModel extends BaseRefreshViewModel<QingTingModel, Album> {
 
     private SingleLiveEvent<List<BannerV2>> mBannerV2Event;
     private SingleLiveEvent<List<Album>> mDailysEvent;
@@ -46,7 +46,7 @@ public class FineViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album>
     private int curBookPage = 1;
     private int curClassRoomPage = 1;
 
-    public FineViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public FineViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

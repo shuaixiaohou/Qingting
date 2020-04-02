@@ -10,7 +10,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.housaiying.qingting.common.bean.AnnouncerCategoryBean;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.home.R;
 import com.ximalaya.ting.android.opensdk.model.album.Announcer;
 
@@ -37,7 +37,7 @@ public class AnnouncerAdapter extends BaseQuickAdapter<Announcer, BaseViewHolder
         } else {
             helper.setText(R.id.tv_vsignature, "这个人很懒,什么也没留下...");
         }
-        helper.setText(R.id.tv_fans, ZhumulangmaUtil.toWanYi(item.getFollowerCount()));
+        helper.setText(R.id.tv_fans, QingTingUtil.toWanYi(item.getFollowerCount()));
 
         List<AnnouncerCategoryBean> categoryBeans = new Gson().fromJson(ResourceUtils.readAssets2String("announcer_category.json"),
                 new TypeToken<ArrayList<AnnouncerCategoryBean>>() {

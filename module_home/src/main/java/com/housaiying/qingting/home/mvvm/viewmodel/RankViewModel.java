@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.album.Album;
@@ -21,14 +21,14 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class RankViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album> {
+public class RankViewModel extends BaseRefreshViewModel<QingTingModel, Album> {
     SingleLiveEvent<List<Album>> mInitFreeEvent;
     SingleLiveEvent<List<Album>> mPaidSingleLiveEvent;
     private int curFreePage = 1;
     private int paidPage = 1;
     private String mCid;
 
-    public RankViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public RankViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

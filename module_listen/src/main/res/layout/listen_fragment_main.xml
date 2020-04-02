@@ -88,7 +88,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="已购"
+                            android:text="待定"
                             android:textColor="@color/textColorPrimary"
                             android:textSize="12sp" />
 

@@ -33,9 +33,9 @@ import com.housaiying.qingting.common.event.ActivityEvent;
 import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.event.KeyCode;
 import com.housaiying.qingting.common.mvvm.view.BaseMvvmFragment;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.AlbumAdapter;
 import com.housaiying.qingting.home.databinding.HomeFragmentPlayTrackBinding;
@@ -172,8 +172,8 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
 
         @Override
         public void onPlayProgress(int i, int i1) {
-            mBinding.tvCurrent.setText(ZhumulangmaUtil.secondToTimeE(i / 1000));
-            mBinding.tvActionCur.setText(ZhumulangmaUtil.secondToTimeE(i / 1000));
+            mBinding.tvCurrent.setText(QingTingUtil.secondToTimeE(i / 1000));
+            mBinding.tvActionCur.setText(QingTingUtil.secondToTimeE(i / 1000));
             if (!isTouch) {
                 mBinding.isbProgress.setProgress((float) i / 1000);
             }
@@ -425,24 +425,24 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
             mBinding.tvAlbumName.setText(currSoundIgnoreKind.getAlbum().getAlbumTitle());
             mBinding.tvTrackIntro.setText(currSoundIgnoreKind.getTrackIntro());
             mBinding.tvPlaycountCreatetime.setText(getString(R.string.playcount_createtime,
-                    ZhumulangmaUtil.toWanYi(currSoundIgnoreKind.getPlayCount())) + "\u3000\u3000" +
+                    QingTingUtil.toWanYi(currSoundIgnoreKind.getPlayCount())) + "\u3000\u3000" +
                     TimeUtils.millis2String(currSoundIgnoreKind.getCreatedAt(), new SimpleDateFormat("yyyy-MM-dd")));
             mBinding.tvFavoriteCount.setText(getString(R.string.favorite_count,
-                    ZhumulangmaUtil.toWanYi(currSoundIgnoreKind.getFavoriteCount())));
+                    QingTingUtil.toWanYi(currSoundIgnoreKind.getFavoriteCount())));
             mBinding.tvCommentCount.setText(getString(R.string.comment_count,
-                    ZhumulangmaUtil.toWanYi(currSoundIgnoreKind.getCommentCount())));
+                    QingTingUtil.toWanYi(currSoundIgnoreKind.getCommentCount())));
 
-            mBinding.tvDuration.setText(ZhumulangmaUtil.secondToTimeE(currSoundIgnoreKind.getDuration()));
+            mBinding.tvDuration.setText(QingTingUtil.secondToTimeE(currSoundIgnoreKind.getDuration()));
 
             mViewModel.getRelativeAlbums(String.valueOf(mTrack.getDataId()));
             mViewModel.getAnnouncer(mTrack.getAnnouncer().getAnnouncerId());
             mBinding.isbProgress.setMax(currSoundIgnoreKind.getDuration());
             if (mPlayerManager.isPlaying()) {
-                mBinding.tvCurrent.setText(ZhumulangmaUtil.secondToTimeE(
+                mBinding.tvCurrent.setText(QingTingUtil.secondToTimeE(
                         mPlayerManager.getPlayCurrPositon() / 1000));
                 mBinding.isbProgress.setProgress((float) mPlayerManager.getPlayCurrPositon() / 1000);
             } else {
-                mBinding.tvCurrent.setText(ZhumulangmaUtil.secondToTimeE(0));
+                mBinding.tvCurrent.setText(QingTingUtil.secondToTimeE(0));
                 mBinding.isbProgress.setProgress(0);
             }
             mViewModel.getSubscribe(String.valueOf(mTrack.getAlbum().getAlbumId()));
@@ -450,8 +450,8 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
         }
         mHandler.removeCallbacksAndMessages(null);
         mHandler.postDelayed(this::scheduleTime, 0);
-        mBinding.tvActionDuration.setText(ZhumulangmaUtil.secondToTimeE(currSoundIgnoreKind.getDuration()));
-        mBinding.tvActionCur.setText(ZhumulangmaUtil.secondToTimeE(mPlayerManager.getPlayCurrPositon() / 1000));
+        mBinding.tvActionDuration.setText(QingTingUtil.secondToTimeE(currSoundIgnoreKind.getDuration()));
+        mBinding.tvActionCur.setText(QingTingUtil.secondToTimeE(mPlayerManager.getPlayCurrPositon() / 1000));
         mBinding.tvTempo.setText(PlayTempoPopup.TEMPO_LABLES[Arrays.binarySearch(PlayTempoPopup.TEMPO_VALUES, XmPlayerManager.getInstance(mActivity).getTempo())]);
     }
 
@@ -480,7 +480,7 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
                 mBinding.includeAnnouncer.tvVsignature.setText(vsignature);
             }
             mBinding.includeAnnouncer.tvFollowingCount.setText(getString(R.string.following_count,
-                    ZhumulangmaUtil.toWanYi(announcer.getFollowerCount())));
+                    QingTingUtil.toWanYi(announcer.getFollowerCount())));
         });
         //开启定时倒计时
         mViewModel.getScheduleTimeEvent().observe(this, sparseArray -> {
@@ -491,12 +491,12 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
                 mHandler.removeCallbacksAndMessages(null);
             } else if (type == 1) {
                 mHandler.postDelayed(PlayTrackFragment.this::scheduleTime, 1000);
-                mBinding.tvSchedule.setText(ZhumulangmaUtil.secondToTimeE(mPlayerManager.getDuration() / 1000 -
+                mBinding.tvSchedule.setText(QingTingUtil.secondToTimeE(mPlayerManager.getDuration() / 1000 -
                         mPlayerManager.getPlayCurrPositon() / 1000));
             } else {
                 if (System.currentTimeMillis() < time) {
                     mHandler.postDelayed(PlayTrackFragment.this::scheduleTime, 1000);
-                    mBinding.tvSchedule.setText(ZhumulangmaUtil.secondToTimeE((time - System.currentTimeMillis()) / 1000));
+                    mBinding.tvSchedule.setText(QingTingUtil.secondToTimeE((time - System.currentTimeMillis()) / 1000));
                 } else {
                     mHandler.removeCallbacksAndMessages(null);
                     mBinding.tvSchedule.setText("定时");
@@ -718,8 +718,8 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
     public void onSeeking(SeekParams seekParams) {
 
         TextView indicator = mBinding.isbProgress.getIndicator().getTopContentView().findViewById(R.id.tv_indicator);
-        indicator.setText(ZhumulangmaUtil.secondToTimeE(seekParams.progress)
-                + "/" + ZhumulangmaUtil.secondToTimeE((long) seekParams.seekBar.getMax()));
+        indicator.setText(QingTingUtil.secondToTimeE(seekParams.progress)
+                + "/" + QingTingUtil.secondToTimeE((long) seekParams.seekBar.getMax()));
     }
 
     @Override
@@ -891,9 +891,9 @@ public class PlayTrackFragment extends BaseMvvmFragment<HomeFragmentPlayTrackBin
 
     @Override
     public void onScrollChange(NestedScrollView nestedScrollView, int i, int scrollY, int i2, int i3) {
-        mBinding.ctbTrans.setAlpha(ZhumulangmaUtil.unvisibleByScroll(scrollY, SizeUtils.dp2px(100),
+        mBinding.ctbTrans.setAlpha(QingTingUtil.unvisibleByScroll(scrollY, SizeUtils.dp2px(100),
                 mBinding.clController.getTop() - SizeUtils.dp2px(80)));
-        mBinding.ctbWhite.setAlpha(ZhumulangmaUtil.visibleByScroll(scrollY, SizeUtils.dp2px(100),
+        mBinding.ctbWhite.setAlpha(QingTingUtil.visibleByScroll(scrollY, SizeUtils.dp2px(100),
                 mBinding.clController.getTop() - SizeUtils.dp2px(80)));
     }
 }

@@ -11,7 +11,7 @@ import com.housaiying.qingting.common.db.PlayHistoryBeanDao;
 import com.housaiying.qingting.common.db.SubscribeBeanDao;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
 import com.housaiying.qingting.common.extra.RxField;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.PlayableModel;
@@ -36,7 +36,7 @@ import io.reactivex.schedulers.Schedulers;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class SubscribeViewModel extends BaseRefreshViewModel<ZhumulangmaModel, SubscribeBean> {
+public class SubscribeViewModel extends BaseRefreshViewModel<QingTingModel, SubscribeBean> {
     private static final int PAGESIZE = 20;
     private SingleLiveEvent<List<SubscribeBean>> mInitSubscribesEvent;
     private SingleLiveEvent<List<Album>> mLikesEvent;
@@ -45,7 +45,7 @@ public class SubscribeViewModel extends BaseRefreshViewModel<ZhumulangmaModel, S
     private int curPage = 1;
     private long trackId = -1;
 
-    public SubscribeViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public SubscribeViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

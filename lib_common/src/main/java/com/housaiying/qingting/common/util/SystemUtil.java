@@ -65,7 +65,8 @@ public final class SystemUtil {
         am.getMemoryInfo(mi);
         return mi.totalMem;// 将获取的内存大小规格化
     }
-     /**
+
+    /**
      * 获得SD卡总大小
      *
      * @return

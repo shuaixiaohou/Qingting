@@ -59,7 +59,6 @@ ext {
             "agentwebX5"                   : "2.0.0",
             "roundedimageview"             : "2.3.0",
             "aspectjrt"                    : "1.8.14",
-            "customactivityoncrash"        : "2.2.0",
             "okaspectjrt"                  : "1.0.7",
             "location"                     : "4.7.0",
             "bmob"                         : "3.7.3-rc1",
@@ -110,18 +109,14 @@ ext {
             "rxbinding"                    : "com.jakewharton.rxbinding3:rxbinding:${versions["rxbinding"]}",
             "agentwebX5"                   : "com.just.agentwebX5:agentwebX5:${versions["agentwebX5"]}",
             "aspectjrt"                    : "org.aspectj:aspectjrt:${versions["aspectjrt"]}",
-            "customactivityoncrash"        : "cat.ereza:customactivityoncrash:${versions["customactivityoncrash"]}",
-
             "okaspectjrt-compiler"         : "com.github.TanZhiL.OkAspectj:okaspectj-compiler:${versions["okaspectjrt"]}",
             "okaspectjrt"                  : "com.github.TanZhiL.OkAspectj:okaspectj:${versions["okaspectjrt"]}",
-
             "location"                     : "com.amap.api:location:${versions["location"]}",
             "bmob"                         : "cn.bmob.android:bmob-sdk:${versions["bmob"]}",
             "RxCache"                      : "com.github.VictorAlbertos.RxCache:runtime:${versions["RxCache"]}",
             "Jolyglot-gson"                : "com.github.VictorAlbertos.Jolyglot:gson:${versions["Jolyglot-gson"]}",
             "loadsir"                      : "com.github.TanZhiL:LoadSir:${versions["loadsir"]}",
             "autosize"                     : "me.jessyan:autosize:${versions["autosize"]}",
-
             //***************************************界面类*************************************************
             "titlebar"                     : "com.wuhenzhizao:titlebar:${versions["titlebar"]}",
             "lottie"                       : "com.airbnb.android:lottie:${versions["lottie"]}",
@@ -145,7 +140,4 @@ ext {
             "SkeletonBlock"                : "com.github.TanZhiL:SkeletonBlock:${versions["SkeletonBlock"]}",
             "backgroundlib"                : "com.noober.background:core:${versions["backgroundlib"]}",
     ]
-
 }
-
-

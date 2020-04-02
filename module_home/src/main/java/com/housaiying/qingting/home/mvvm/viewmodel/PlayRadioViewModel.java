@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
 import com.housaiying.qingting.common.extra.RxField;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseViewModel;
 import com.housaiying.qingting.common.util.RadioUtil;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -34,7 +34,7 @@ import io.reactivex.internal.functions.Functions;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class PlayRadioViewModel extends BaseViewModel<ZhumulangmaModel> {
+public class PlayRadioViewModel extends BaseViewModel<QingTingModel> {
 
     private SingleLiveEvent<ProgramList> mProgramsEvent;
 
@@ -43,7 +43,7 @@ public class PlayRadioViewModel extends BaseViewModel<ZhumulangmaModel> {
     private SingleLiveEvent<List<Schedule>> mTomorrowEvent;
     private SingleLiveEvent<Void> mPauseAnimEvent;
 
-    public PlayRadioViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public PlayRadioViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

@@ -24,7 +24,6 @@
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <!-- 喜马拉雅配置END -->
-
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -70,5 +69,4 @@
             android:process=":player" />
         <!-- 喜马拉雅听END -->
     </application>
-
 </manifest>

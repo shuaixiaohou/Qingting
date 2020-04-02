@@ -3,18 +3,10 @@ package com.housaiying.qingting.common.net.exception;
 
 import android.util.Log;
 
-import com.google.gson.Gson;
-import com.housaiying.qingting.common.Constants;
-import com.housaiying.qingting.common.bean.UserBean;
 import com.housaiying.qingting.common.db.DBManager;
-import com.housaiying.qingting.common.net.NetManager;
-import com.housaiying.qingting.common.net.RxAdapter;
-import com.housaiying.qingting.common.net.dto.LoginDTO;
-import com.housaiying.qingting.common.net.dto.ResponseDTO;
 import com.housaiying.qingting.common.util.log.TLog;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -37,37 +29,5 @@ public class ExceptionRetry implements Function<Observable<Throwable>, Observabl
                     TLog.d(Log.getStackTraceString(throwable));
                     return Observable.error(throwable);
                 });
-    }
-
-    /**
-     * 重新登陆
-     *
-     * @return
-     */
-    private Observable reLogin() {
-        return mDBManager.getSPString(Constants.SP.USER)
-                .map(s -> {
-                    final UserBean userBean = new Gson().fromJson(s, UserBean.class);
-                    LoginDTO loginDTO = new LoginDTO();
-                    loginDTO.setCode(userBean.getCode());
-                    loginDTO.setDescer_name(userBean.getDescer_name());
-                    loginDTO.setDescer_phone(userBean.getDescer_phone());
-                    loginDTO.setGraer_name(userBean.getGraer_name());
-                    loginDTO.setGraer_phone(userBean.getGraer_phone());
-                    return loginDTO;
-                }).flatMap((Function<LoginDTO, ObservableSource<ResponseDTO<UserBean>>>) loginDTO ->
-                        NetManager.getInstance().getUserService().login(loginDTO))
-                .flatMap((Function<ResponseDTO<UserBean>, Observable<?>>) responseDTO -> {
-                    if (!responseDTO.code.equals(ExceptionConverter.APP_ERROR.SUCCESS)) {
-                        return Observable.error(new CustException(responseDTO.code,
-                                responseDTO.msg));
-                    } else {
-                        return mDBManager.putSP(Constants.SP.TOKEN, responseDTO.result.getToken())
-                                .flatMap((Function<String, ObservableSource<String>>) aBoolean ->
-                                        mDBManager.putSP(Constants.SP.USER, new Gson().toJson(responseDTO.result)));
-                    }
-                })
-                .compose(RxAdapter.schedulersTransformer())
-                .compose(RxAdapter.exceptionTransformer());
     }
 }

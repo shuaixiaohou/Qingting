@@ -90,7 +90,6 @@ dependencies {
         exclude group: 'androidx.appcompat', module: 'appcompat'
     })
     api rootProject.ext.dependencies["location"]
-    api rootProject.ext.dependencies["customactivityoncrash"]
     api rootProject.ext.dependencies["bmob"]
     api rootProject.ext.dependencies["SkeletonBlock"]
     api rootProject.ext.dependencies["RxCache"]

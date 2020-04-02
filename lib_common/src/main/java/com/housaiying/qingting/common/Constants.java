@@ -69,12 +69,8 @@ public interface Constants {
         String CITY_NAME = "city_name";
         String PROVINCE_CODE = "province_code";
         String PROVINCE_NAME = "province_name";
-
         String PLAY_SCHEDULE_TYPE = "play_schedule_type";
         String PLAY_SCHEDULE_TIME = "play_schedule_time";
-        String AD_TIME = "ad_time";
-        String AD_LABEL = "ad_label";
-        String AD_URL = "ad_url";
     }
 
     interface Default {
@@ -82,7 +78,6 @@ public interface Constants {
         String CITY_NAME = "郑州";
         String PROVINCE_CODE = "410000";
         String PROVINCE_NAME = "河南";
-        String AD_NAME = "/ad.jpg";
     }
 
     interface Cache {

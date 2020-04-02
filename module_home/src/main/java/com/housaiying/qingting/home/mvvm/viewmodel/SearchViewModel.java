@@ -10,7 +10,7 @@ import com.housaiying.qingting.common.bean.SearchHistoryBean;
 import com.housaiying.qingting.common.db.PlayHistoryBeanDao;
 import com.housaiying.qingting.common.db.SearchHistoryBeanDao;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseViewModel;
 import com.housaiying.qingting.home.bean.SearchSuggestItem;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -37,7 +37,7 @@ import io.reactivex.functions.Function;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class SearchViewModel extends BaseViewModel<ZhumulangmaModel> {
+public class SearchViewModel extends BaseViewModel<QingTingModel> {
     private SingleLiveEvent<SearchHistoryBean> mInsertHistoryEvent;
     private SingleLiveEvent<List<HotWord>> mHotWordsEvent;
     private SingleLiveEvent<List<SearchHistoryBean>> mHistorySingleLiveEvent;
@@ -45,7 +45,7 @@ public class SearchViewModel extends BaseViewModel<ZhumulangmaModel> {
     private SingleLiveEvent<Track> mLastplaySingleLiveEvent;
     private long trackId = -1;
 
-    public SearchViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public SearchViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
 
     }

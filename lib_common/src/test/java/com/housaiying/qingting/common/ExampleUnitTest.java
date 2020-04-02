@@ -1,4 +1,4 @@
-package com.gykj.zhumulangma.common;
+package com.housaiying.qingting.common;
 
 import com.housaiying.qingting.common.net.exception.ExceptionRetry;
 

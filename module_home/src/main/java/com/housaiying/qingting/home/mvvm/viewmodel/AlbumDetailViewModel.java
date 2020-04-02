@@ -10,7 +10,7 @@ import com.housaiying.qingting.common.bean.SubscribeBean;
 import com.housaiying.qingting.common.db.PlayHistoryBeanDao;
 import com.housaiying.qingting.common.db.SubscribeBeanDao;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.PlayableModel;
@@ -38,7 +38,7 @@ import io.reactivex.schedulers.Schedulers;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class AlbumDetailViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Track> {
+public class AlbumDetailViewModel extends BaseRefreshViewModel<QingTingModel, Track> {
 
     //专辑详情
     private SingleLiveEvent<Album> mAlbumEvent;
@@ -65,7 +65,7 @@ public class AlbumDetailViewModel extends BaseRefreshViewModel<ZhumulangmaModel,
     //专辑Id
     private long mAlbumId;
 
-    public AlbumDetailViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public AlbumDetailViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

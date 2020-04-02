@@ -5,7 +5,7 @@ import android.app.Application;
 import com.google.gson.Gson;
 import com.housaiying.qingting.common.bean.PlayHistoryBean;
 import com.housaiying.qingting.common.db.PlayHistoryBeanDao;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.ximalaya.ting.android.opensdk.model.live.schedule.Schedule;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 
@@ -14,7 +14,7 @@ import java.util.List;
 
 import io.reactivex.Observable;
 
-public class HistoryModel extends ZhumulangmaModel {
+public class HistoryModel extends QingTingModel {
 
     public HistoryModel(Application application) {
         super(application);

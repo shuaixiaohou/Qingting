@@ -32,6 +32,10 @@ public class MainDiscoverFragment extends BaseFragment<DiscoverFragmentMainBindi
     @Override
     public void initListener() {
         super.initListener();
+        mBinding.clFfjp.setOnClickListener(this);
+        mBinding.clQmld.setOnClickListener(this);
+        mBinding.clTyq.setOnClickListener(this);
+        mBinding.clDkzb.setOnClickListener(this);
         mBinding.clWd.setOnClickListener(this);
     }
 
@@ -66,6 +70,7 @@ public class MainDiscoverFragment extends BaseFragment<DiscoverFragmentMainBindi
     public SimpleBarStyle onBindBarRightStyle() {
         return SimpleBarStyle.RIGHT_ICON;
     }
+
     @Override
     public Integer[] onBindBarRightIcon() {
         return new Integer[]{R.drawable.ic_common_search};

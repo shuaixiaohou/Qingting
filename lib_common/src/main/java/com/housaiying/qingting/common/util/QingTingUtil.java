@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * Created by housaiying
  * on 2020/3/10
  */
-public class ZhumulangmaUtil {
+public class QingTingUtil {
     public static String toWanYi(long l) {
         if (l < 10000) {
             return String.valueOf(l);

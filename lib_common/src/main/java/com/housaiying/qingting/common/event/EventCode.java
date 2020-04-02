@@ -13,7 +13,6 @@ public interface EventCode {
         int HIDE_GP = 1002;
         int SHOW_GP = 1003;
         int LOGINSUCC = 1005;
-        int LOGOUTSUCC = 1006;
         int SHARE = 1007;
         //1000开始
     }

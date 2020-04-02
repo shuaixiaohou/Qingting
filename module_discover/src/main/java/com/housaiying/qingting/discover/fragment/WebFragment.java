@@ -114,11 +114,6 @@ public class WebFragment extends BaseFragment<DiscoverFragmentWebBinding> {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            if (timer.get(url) != null) {
-                long overTime = System.currentTimeMillis();
-                Long startTime = timer.get(url);
-            }
-
         }
     };
     private AlertDialog mAlertDialog;
@@ -171,7 +166,6 @@ public class WebFragment extends BaseFragment<DiscoverFragmentWebBinding> {
                 .createAgentWeb()
                 .ready()
                 .go(mPath);
-//                .go("https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&_anw_=1");
     }
 
     public WebSettings getSettings() {

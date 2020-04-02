@@ -4,7 +4,7 @@ import android.widget.CheckBox;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.home.R;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.sdkdownloader.XmDownloadManager;
@@ -28,8 +28,8 @@ public class DownloadTrackAdapter extends BaseQuickAdapter<Track, BaseViewHolder
     @Override
     protected void convert(BaseViewHolder helper, Track item) {
         helper.setText(R.id.tv_title, item.getTrackTitle());
-        helper.setText(R.id.tv_duration, ZhumulangmaUtil.secondToTime(item.getDuration()));
-        helper.setText(R.id.tv_size, ZhumulangmaUtil.byte2FitMemorySize(item.getDownloadSize()));
+        helper.setText(R.id.tv_duration, QingTingUtil.secondToTime(item.getDuration()));
+        helper.setText(R.id.tv_size, QingTingUtil.byte2FitMemorySize(item.getDownloadSize()));
         helper.setText(R.id.tv_index, item.getOrderPositionInAlbum() + 1 + "");
         CheckBox checkBox = helper.getView(R.id.cb);
         checkBox.setChecked(mSelectedTracks.contains(item));

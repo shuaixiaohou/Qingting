@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.track.CommonTrackList;
@@ -23,7 +23,7 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class BatchDownloadViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Track> {
+public class BatchDownloadViewModel extends BaseRefreshViewModel<QingTingModel, Track> {
 
     public static final int PAGESIEZ = 50;
     private SingleLiveEvent<TrackList> mInitTracksEvent;
@@ -33,7 +33,7 @@ public class BatchDownloadViewModel extends BaseRefreshViewModel<ZhumulangmaMode
     private String mSort;
     private long mAlbumId;
 
-    public BatchDownloadViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public BatchDownloadViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

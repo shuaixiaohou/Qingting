@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
 import com.ximalaya.ting.android.opensdk.model.album.Announcer;
@@ -21,13 +21,13 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class SearchAnnouncerViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Announcer> {
+public class SearchAnnouncerViewModel extends BaseRefreshViewModel<QingTingModel, Announcer> {
     private SingleLiveEvent<List<Announcer>> mInitAnnouncersEvent;
 
     private int curPage = 1;
     private String mKeyword;
 
-    public SearchAnnouncerViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public SearchAnnouncerViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

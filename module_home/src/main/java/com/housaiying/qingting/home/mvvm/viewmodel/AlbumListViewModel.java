@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseRefreshViewModel;
 import com.housaiying.qingting.home.fragment.AlbumListFragment;
 import com.ximalaya.ting.android.opensdk.constants.DTransferConstants;
@@ -22,14 +22,14 @@ import java.util.Map;
  * <br/>Email: 1194959365@qq.com
  * <br/>Description:
  */
-public class AlbumListViewModel extends BaseRefreshViewModel<ZhumulangmaModel, Album> {
+public class AlbumListViewModel extends BaseRefreshViewModel<QingTingModel, Album> {
 
     private SingleLiveEvent<List<Album>> mInitAlbumsEvent;
     private int curPage = 1;
     private int mType;
     private long mAnnouncerId;
 
-    public AlbumListViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public AlbumListViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

@@ -8,7 +8,7 @@ import com.blankj.utilcode.util.CollectionUtils;
 import com.housaiying.qingting.common.bean.PlayHistoryBean;
 import com.housaiying.qingting.common.db.PlayHistoryBeanDao;
 import com.housaiying.qingting.common.event.SingleLiveEvent;
-import com.housaiying.qingting.common.mvvm.model.ZhumulangmaModel;
+import com.housaiying.qingting.common.mvvm.model.QingTingModel;
 import com.housaiying.qingting.common.mvvm.viewmodel.BaseViewModel;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.sdkdownloader.XmDownloadManager;
@@ -29,11 +29,11 @@ import io.reactivex.schedulers.Schedulers;
  * Date: 2020/3/1 9:20<br/>
  * Description:
  */
-public class DownloadSortViewModel extends BaseViewModel<ZhumulangmaModel> {
+public class DownloadSortViewModel extends BaseViewModel<QingTingModel> {
 
     private SingleLiveEvent<List<Track>> mTracksEvent;
 
-    public DownloadSortViewModel(@NonNull Application application, ZhumulangmaModel model) {
+    public DownloadSortViewModel(@NonNull Application application, QingTingModel model) {
         super(application, model);
     }
 

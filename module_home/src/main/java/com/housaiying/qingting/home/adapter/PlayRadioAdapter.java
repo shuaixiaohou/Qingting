@@ -80,6 +80,5 @@ public class PlayRadioAdapter extends BaseQuickAdapter<Schedule, BaseViewHolder>
             }
 
         }
-//        helper.setVisible(R.id.v_line,helper.getLayoutPosition()!=getItemCount()-1);
     }
 }

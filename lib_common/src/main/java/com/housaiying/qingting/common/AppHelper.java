@@ -4,7 +4,6 @@ import android.app.Application;
 import android.app.Notification;
 
 import com.blankj.utilcode.util.ActivityUtils;
-import com.housaiying.qingting.common.aop.LoginHelper;
 import com.housaiying.qingting.common.net.NetManager;
 import com.ximalaya.ting.android.opensdk.constants.ConstantsOpenSdk;
 import com.ximalaya.ting.android.opensdk.datatrasfer.AccessTokenManager;
@@ -53,9 +52,6 @@ public class AppHelper {
         CommonRequest.getInstanse().setDefaultPagesize(20);
 
         AccessTokenManager.getInstanse().init(mApplication);
-        if (AccessTokenManager.getInstanse().hasLogin()) {
-            LoginHelper.registerLoginTokenChangeListener();
-        }
         return this;
     }
 

@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.listen.R;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 import com.ximalaya.ting.android.sdkdownloader.XmDownloadManager;
@@ -24,7 +24,7 @@ public class DownloadAlbumAdapter extends BaseQuickAdapter<XmDownloadAlbum, Base
     protected void convert(BaseViewHolder helper, XmDownloadAlbum item) {
         Glide.with(mContext).load(item.getCoverUrlMiddle()).into((ImageView) helper.getView(R.id.iv_cover));
         helper.setText(R.id.tv_title, item.getAlbumTitle());
-        helper.setText(R.id.tv_size, ZhumulangmaUtil.byte2FitMemorySize(item.getDownloadTrackSize()));
+        helper.setText(R.id.tv_size, QingTingUtil.byte2FitMemorySize(item.getDownloadTrackSize()));
         Track track = XmDownloadManager.getInstance().getDownloadTrackInAlbum(item.getAlbumId(), true).get(0);
         helper.setText(R.id.tv_author, track.getAnnouncer().getNickname());
         helper.setText(R.id.tv_track_num, String.format(mContext.getResources().getString(R.string.ji),

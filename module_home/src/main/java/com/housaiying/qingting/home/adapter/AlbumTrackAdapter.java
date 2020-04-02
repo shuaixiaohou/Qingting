@@ -8,7 +8,7 @@ import com.blankj.utilcode.util.TimeUtils;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.home.R;
 import com.ximalaya.ting.android.opensdk.model.PlayableModel;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
@@ -31,8 +31,8 @@ public class AlbumTrackAdapter extends BaseQuickAdapter<Track, BaseViewHolder> {
 
         Glide.with(mContext).load(item.getCoverUrlSmall()).into((ImageView) helper.getView(R.id.iv_cover));
         helper.setText(R.id.tv_title, item.getTrackTitle());
-        helper.setText(R.id.tv_playcount, ZhumulangmaUtil.toWanYi(item.getPlayCount()));
-        helper.setText(R.id.tv_duration, ZhumulangmaUtil.secondToTime(item.getDuration()));
+        helper.setText(R.id.tv_playcount, QingTingUtil.toWanYi(item.getPlayCount()));
+        helper.setText(R.id.tv_duration, QingTingUtil.secondToTime(item.getDuration()));
         helper.setText(R.id.tv_index, item.getOrderPositionInAlbum() + 1 + "");
         helper.setText(R.id.tv_create_time, TimeUtils.millis2String(item.getCreatedAt(), new SimpleDateFormat("yyyy-MM-dd")));
         //历史播放进度

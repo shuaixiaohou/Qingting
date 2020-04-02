@@ -21,7 +21,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.AppUtils;
 import com.housaiying.qingting.common.Constants;
-import com.housaiying.qingting.common.aop.LoginHelper;
+import com.housaiying.qingting.common.aop.Helper;
 import com.housaiying.qingting.common.bean.PlayHistoryBean;
 import com.housaiying.qingting.common.event.ActivityEvent;
 import com.housaiying.qingting.common.event.EventCode;
@@ -31,7 +31,7 @@ import com.housaiying.qingting.common.util.PermissionPageUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
 import com.housaiying.qingting.common.widget.GlobalPlay;
-import com.housaiying.qingting.main.dialog.SplashAdPopup;
+import com.housaiying.qingting.main.dialog.SplashPopup;
 import com.housaiying.qingting.main.fragment.MainFragment;
 import com.housaiying.qingting.main.mvvm.ViewModelFactory;
 import com.housaiying.qingting.main.mvvm.viewmodel.MainViewModel;
@@ -206,7 +206,6 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
         //去除背景色,避免过度绘制
         setTheme(R.style.NullTheme);
         super.onCreate(savedInstanceState);
-        initAd();
         //申请权限
         new RxPermissions(this).request(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_FINE_LOCATION,
@@ -225,13 +224,6 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
                     }
                 });
 
-    }
-
-    /**
-     * 显示广告
-     */
-    private void initAd() {
-        mViewModel.initAd();
     }
 
     @Override
@@ -291,21 +283,15 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
         mViewModel.getShowAdEvent().observe(this, new Observer<Void>() {
             @Override
             public void onChanged(@Nullable Void aVoid) {
-                new XPopup.Builder(MainActivity.this).customAnimator(new SplashAdPopup.AlphaAnimator())
+                new XPopup.Builder(MainActivity.this)
                         .setPopupCallback(new SimpleCallback() {
-                            @Override
-                            public void onDismiss() {
-                                super.onDismiss();
-                                mViewModel.adDissmiss();
-                            }
-
                             @Override
                             public boolean onBackPressed() {
                                 ActivityUtils.startHomeActivity();
                                 return true;
                             }
                         })
-                        .asCustom(new SplashAdPopup(MainActivity.this)).show();
+                        .asCustom(new SplashPopup(MainActivity.this)).show();
             }
         });
     }
@@ -405,7 +391,7 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
                 config.setIndicatorVisibility(false);
                 ShareAction action = (ShareAction) event.getData();
                 if (action == null) {
-                    UMWeb web = new UMWeb("https://github.com/shuaixiaohou");
+                    UMWeb web = new UMWeb("http://www.housaiying.icoc.bz/");
                     web.setTitle("倾听");//标题
                     web.setThumb(new UMImage(this, R.drawable.third_launcher_ting));  //缩略图
                     web.setDescription("倾听");//描述
@@ -427,15 +413,14 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
         super.onActivityResult(requestCode, resultCode, data);
         //分享回调
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-        if (LoginHelper.getInstance().getSsoHandler() != null) {
-            LoginHelper.getInstance().getSsoHandler().authorizeCallBack(requestCode, resultCode, data);
+        if (Helper.getInstance().getSsoHandler() != null) {
+            Helper.getInstance().getSsoHandler().authorizeCallBack(requestCode, resultCode, data);
         }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         mPlayerManager.removePlayerStatusListener(playerStatusListener);
         mPlayerManager.removeAdsStatusListener(adsStatusListener);
         UMShareAPI.get(this).release();

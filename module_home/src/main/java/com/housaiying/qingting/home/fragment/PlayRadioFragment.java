@@ -19,9 +19,9 @@ import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.ActivityEvent;
 import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.mvvm.view.BaseMvvmFragment;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.PlayRadioAdapter;
 import com.housaiying.qingting.home.databinding.HomeFragmentPlayRadioBinding;
@@ -141,7 +141,7 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                 mSchedule = (Schedule) mPlayerManager.getCurrSound();
                 setTitle(new String[]{mSchedule.getRadioName()});
                 mBinding.includeItemRadio.tvRadioName.setText(mSchedule.getRadioName());
-                mBinding.includeItemRadio.tvPlaycount.setText(ZhumulangmaUtil.toWanYi(mSchedule.getRadioPlayCount()) + "人听过");
+                mBinding.includeItemRadio.tvPlaycount.setText(QingTingUtil.toWanYi(mSchedule.getRadioPlayCount()) + "人听过");
                 mViewModel.getPrograms(String.valueOf(mSchedule.getRadioId()));
 
                 mBinding.tvTime.setText(mSchedule.getStartTime().substring(mSchedule.getStartTime().length() - 5) + "~"
@@ -182,8 +182,8 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                 e.printStackTrace();
             }
         }
-        mBinding.tvCurrent.setText(ZhumulangmaUtil.secondToTimeE(cur / 1000));
-        mBinding.tvDuration.setText(ZhumulangmaUtil.secondToTimeE(dur / 1000));
+        mBinding.tvCurrent.setText(QingTingUtil.secondToTimeE(cur / 1000));
+        mBinding.tvDuration.setText(QingTingUtil.secondToTimeE(dur / 1000));
         if (!isTouch) {
             mBinding.isbProgress.setMax((float) dur / 1000);
             mBinding.isbProgress.setProgress((float) cur / 1000);
@@ -524,8 +524,8 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     @Override
     public void onSeeking(SeekParams seekParams) {
         TextView indicator = mBinding.isbProgress.getIndicator().getTopContentView().findViewById(R.id.tv_indicator);
-        indicator.setText(ZhumulangmaUtil.secondToTimeE(seekParams.progress)
-                + "/" + ZhumulangmaUtil.secondToTimeE((long) seekParams.seekBar.getMax()));
+        indicator.setText(QingTingUtil.secondToTimeE(seekParams.progress)
+                + "/" + QingTingUtil.secondToTimeE((long) seekParams.seekBar.getMax()));
     }
 
     @Override

@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseItemDraggableAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.listen.R;
 import com.ximalaya.ting.android.opensdk.model.track.Track;
 
@@ -25,10 +25,10 @@ public class DownloadSortAdapter extends BaseItemDraggableAdapter<Track, BaseVie
     protected void convert(BaseViewHolder helper, Track item) {
         Glide.with(mContext).load(item.getCoverUrlMiddle()).into((ImageView) helper.getView(R.id.iv_cover));
         helper.setText(R.id.tv_title, item.getTrackTitle());
-        helper.setText(R.id.tv_size, ZhumulangmaUtil.byte2FitMemorySize(item.getDownloadedSize()));
+        helper.setText(R.id.tv_size, QingTingUtil.byte2FitMemorySize(item.getDownloadedSize()));
 
         helper.setText(R.id.tv_album, item.getAlbum().getAlbumTitle());
-        helper.setText(R.id.tv_duration, ZhumulangmaUtil.secondToTime(item.getDuration()));
+        helper.setText(R.id.tv_duration, QingTingUtil.secondToTime(item.getDuration()));
         //历史播放进度
         if (item.getSource() == 0) {
             helper.setText(R.id.tv_hasplay, "");

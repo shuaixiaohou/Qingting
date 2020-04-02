@@ -24,12 +24,11 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.housaiying.qingting.common.Constants;
-import com.housaiying.qingting.common.aop.NeedLogin;
 import com.housaiying.qingting.common.bean.AnnouncerCategoryBean;
 import com.housaiying.qingting.common.event.KeyCode;
 import com.housaiying.qingting.common.mvvm.view.BaseRefreshMvvmFragment;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.AlbumAdapter;
 import com.housaiying.qingting.home.adapter.AnnouncerTrackAdapter;
@@ -127,8 +126,8 @@ public class AnnouncerDetailFragment extends BaseRefreshMvvmFragment<HomeFragmen
         mBinding.nsv.setOnScrollChangeListener((NestedScrollView.OnScrollChangeListener)
                 (nestedScrollView, i, scrollY, i2, i3) -> {
                     mBinding.flParallax.setTranslationY(-scrollY);
-                    mBinding.ctbWhite.setAlpha(ZhumulangmaUtil.visibleByScroll(SizeUtils.px2dp(scrollY), 0, 100));
-                    mBinding.ctbTrans.setAlpha(ZhumulangmaUtil.unvisibleByScroll(SizeUtils.px2dp(scrollY), 0, 100));
+                    mBinding.ctbWhite.setAlpha(QingTingUtil.visibleByScroll(SizeUtils.px2dp(scrollY), 0, 100));
+                    mBinding.ctbTrans.setAlpha(QingTingUtil.unvisibleByScroll(SizeUtils.px2dp(scrollY), 0, 100));
                 });
         mBinding.refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
             @Override
@@ -184,8 +183,8 @@ public class AnnouncerDetailFragment extends BaseRefreshMvvmFragment<HomeFragmen
             mAnnouncer = announcer;
             Glide.with(mActivity).load(announcer.getAvatarUrl()).into(mBinding.ivAvatar);
             mBinding.tvNick.setText(announcer.getNickname());
-            mBinding.tvFans.setText("关注  " + ZhumulangmaUtil.toWanYi(announcer.getFollowingCount())
-                    + "  |  粉丝  " + ZhumulangmaUtil.toWanYi(announcer.getFollowerCount()));
+            mBinding.tvFans.setText("关注  " + QingTingUtil.toWanYi(announcer.getFollowingCount())
+                    + "  |  粉丝  " + QingTingUtil.toWanYi(announcer.getFollowerCount()));
             mBinding.tvVip.setVisibility(announcer.isVerified() ? View.VISIBLE : View.GONE);
             if (!TextUtils.isEmpty(announcer.getVsignature())) {
                 mBinding.tvVsignature.setText(announcer.getVsignature());
@@ -244,7 +243,6 @@ public class AnnouncerDetailFragment extends BaseRefreshMvvmFragment<HomeFragmen
         }
     }
 
-    @NeedLogin
     private void follwer() {
         Log.d(TAG, "follwer() called");
     }

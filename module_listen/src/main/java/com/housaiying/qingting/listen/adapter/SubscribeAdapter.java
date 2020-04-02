@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.housaiying.qingting.common.bean.SubscribeBean;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.listen.R;
 
 /**
@@ -22,7 +22,7 @@ public class SubscribeAdapter extends BaseQuickAdapter<SubscribeBean, BaseViewHo
     protected void convert(BaseViewHolder helper, SubscribeBean item) {
 
         Glide.with(mContext).load(item.getAlbum().getCoverUrlMiddle()).into((ImageView) helper.getView(R.id.iv_cover));
-        helper.setText(R.id.tv_playcount, ZhumulangmaUtil.toWanYi(item.getAlbum().getPlayCount()));
+        helper.setText(R.id.tv_playcount, QingTingUtil.toWanYi(item.getAlbum().getPlayCount()));
         helper.setText(R.id.tv_title, item.getAlbum().getAlbumTitle());
         helper.setText(R.id.tv_desc, item.getAlbum().getAlbumIntro());
         helper.addOnClickListener(R.id.iv_more);

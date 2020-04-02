@@ -20,10 +20,10 @@ import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.event.KeyCode;
 import com.housaiying.qingting.common.mvvm.view.BaseRefreshMvvmFragment;
 import com.housaiying.qingting.common.mvvm.view.status.ListSkeleton;
+import com.housaiying.qingting.common.util.QingTingUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.SystemUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
-import com.housaiying.qingting.common.util.ZhumulangmaUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.DownloadTrackAdapter;
 import com.housaiying.qingting.home.databinding.HomeFragmentBatchDownloadBinding;
@@ -74,9 +74,9 @@ public class BatchDownloadFragment extends BaseRefreshMvvmFragment<HomeFragmentB
     @Override
     protected void initView() {
         mDownloadTrackAdapter = new DownloadTrackAdapter(R.layout.home_item_batch_download);
-        mBinding.includeList.recyclerview.setLayoutManager(new LinearLayoutManager(mActivity));
-        mBinding.includeList.recyclerview.setHasFixedSize(true);
-        mDownloadTrackAdapter.bindToRecyclerView(mBinding.includeList.recyclerview);
+        mBinding.recyclerview.setLayoutManager(new LinearLayoutManager(mActivity));
+        mBinding.recyclerview.setHasFixedSize(true);
+        mDownloadTrackAdapter.bindToRecyclerView(mBinding.recyclerview);
         mPagerPopup = new TrackPagerPopup(mActivity, this);
         mPagerPopup.setDismissingListener(this);
     }
@@ -94,7 +94,7 @@ public class BatchDownloadFragment extends BaseRefreshMvvmFragment<HomeFragmentB
     @NonNull
     @Override
     protected WrapRefresh onBindWrapRefresh() {
-        return new WrapRefresh(mBinding.includeList.refreshLayout, mDownloadTrackAdapter);
+        return new WrapRefresh(mBinding.refreshLayout, mDownloadTrackAdapter);
     }
 
     @Override
@@ -182,7 +182,7 @@ public class BatchDownloadFragment extends BaseRefreshMvvmFragment<HomeFragmentB
             if (mDownloadTrackAdapter.getSelectedTracks().size() > 0) {
                 mBinding.tvMemory.setVisibility(View.VISIBLE);
                 mBinding.tvMemory.setText(getString(R.string.selected_num,
-                        mDownloadTrackAdapter.getSelectedTracks().size(), ZhumulangmaUtil.byte2FitMemorySize(mTotalSize),
+                        mDownloadTrackAdapter.getSelectedTracks().size(), QingTingUtil.byte2FitMemorySize(mTotalSize),
                         SystemUtil.getRomTotalSize(mActivity)));
                 mBinding.tvBatchDownload.setEnabled(true);
                 mBinding.tvBatchDownload.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -231,7 +231,7 @@ public class BatchDownloadFragment extends BaseRefreshMvvmFragment<HomeFragmentB
             if (mDownloadTrackAdapter.getSelectedTracks().size() > 0) {
                 mBinding.tvMemory.setVisibility(View.VISIBLE);
                 mBinding.tvMemory.setText(getString(R.string.selected_num,
-                        mDownloadTrackAdapter.getSelectedTracks().size(), ZhumulangmaUtil.byte2FitMemorySize(mTotalSize),
+                        mDownloadTrackAdapter.getSelectedTracks().size(), QingTingUtil.byte2FitMemorySize(mTotalSize),
                         SystemUtil.getRomTotalSize(mActivity)));
                 mBinding.tvBatchDownload.setEnabled(true);
                 mBinding.tvBatchDownload.setBackgroundColor(getResources().getColor(R.color.colorPrimary));

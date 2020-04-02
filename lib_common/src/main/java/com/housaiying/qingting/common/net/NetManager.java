@@ -8,14 +8,11 @@ import androidx.annotation.NonNull;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.db.DBManager;
 import com.housaiying.qingting.common.net.service.CommonService;
-import com.housaiying.qingting.common.net.service.UserService;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.Proxy;
 
-import io.rx_cache2.internal.RxCache;
-import io.victoralbertos.jolyglot.GsonSpeaker;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -36,11 +33,9 @@ public class NetManager {
     private static final String TAG = "NetManager";
     private static File mCacheFile;
     private static volatile NetManager instance;
-    private CacheProvider mCacheProvider;
     private Retrofit mRetrofit;
     private int mNetStatus = Constans.NET_ONLINE;
     private CommonService mCommonService;
-    private UserService mUserService;
 
     private NetManager() {
         //先异步获取token
@@ -69,10 +64,6 @@ public class NetManager {
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();
-
-                    mCacheProvider = new RxCache.Builder()
-                            .persistence(mCacheFile, new GsonSpeaker())
-                            .using(CacheProvider.class);
                 });
     }
 
@@ -93,27 +84,11 @@ public class NetManager {
         return instance;
     }
 
-    /**
-     * 获取缓存对象
-     *
-     * @return
-     */
-    public CacheProvider getCacheProvider() {
-        return mCacheProvider;
-    }
-
     public CommonService getCommonService() {
         if (mCommonService == null) {
             mCommonService = mRetrofit.create(CommonService.class);
         }
         return mCommonService;
-    }
-
-    public UserService getUserService() {
-        if (mUserService == null) {
-            mUserService = mRetrofit.create(UserService.class);
-        }
-        return mUserService;
     }
 
     /**
