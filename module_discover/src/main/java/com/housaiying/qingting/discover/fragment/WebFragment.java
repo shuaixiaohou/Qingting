@@ -165,7 +165,8 @@ public class WebFragment extends BaseFragment<DiscoverFragmentWebBinding> {
                 .addDownLoadResultListener(mDownLoadResultListener)
                 .createAgentWeb()
                 .ready()
-                .go(mPath);
+//                .go(mPath);
+                .go("https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1");
     }
 
     public WebSettings getSettings() {

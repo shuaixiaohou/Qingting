@@ -54,7 +54,6 @@ public class PlayRadioAdapter extends BaseQuickAdapter<Schedule, BaseViewHolder>
                     BaseUtil.isInTime(item.getStartTime() + "-" + item.getEndTime()) != 0);
 
             if (start > System.currentTimeMillis()) {
-                helper.setGone(R.id.tv_zhibo, false);
                 helper.setGone(R.id.tv_huiting, false);
             }
         } catch (ParseException e) {
