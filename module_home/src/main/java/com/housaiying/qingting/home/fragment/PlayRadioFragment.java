@@ -387,8 +387,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
 
     @Override
     public void onCompletePlayAds() {
-        //    playAnim();
-        //    Log.e(TAG, "onCompletePlayAds() playAnim");
     }
 
     @Override

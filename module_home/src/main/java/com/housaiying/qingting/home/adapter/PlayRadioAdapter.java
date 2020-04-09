@@ -48,6 +48,7 @@ public class PlayRadioAdapter extends BaseQuickAdapter<Schedule, BaseViewHolder>
 
         try {
             long start = sdf.parse(item.getStartTime()).getTime();
+            //直播
             helper.setGone(R.id.tv_zhibo,
                     BaseUtil.isInTime(item.getStartTime() + "-" + item.getEndTime()) == 0);
             helper.setGone(R.id.tv_huiting,
