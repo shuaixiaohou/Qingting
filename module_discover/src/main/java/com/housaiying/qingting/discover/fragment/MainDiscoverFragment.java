@@ -37,6 +37,9 @@ public class MainDiscoverFragment extends BaseFragment<DiscoverFragmentMainBindi
         mBinding.clTyq.setOnClickListener(this);
         mBinding.clDkzb.setOnClickListener(this);
         mBinding.clWd.setOnClickListener(this);
+        mBinding.clSc.setOnClickListener(this);
+        mBinding.clYx.setOnClickListener(this);
+        mBinding.clHd.setOnClickListener(this);
     }
 
     @Override
@@ -83,8 +86,32 @@ public class MainDiscoverFragment extends BaseFragment<DiscoverFragmentMainBindi
 
     @Override
     public void onClick(View v) {
-        RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
-                .withString(KeyCode.Discover.PATH, v.getTag().toString()));
+        int id = v.getId();
+        if (R.id.cl_ffjp == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1"));
+        } else if (R.id.cl_qmld == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "http://wx.wind.com.cn/unitedweb/cmsapp/Sites/sariInfo/message.html?from=timeline&isappinstalled=0"));
+        } else if (R.id.cl_tyq == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "https://wp.m.163.com/163/frontend/2019-nCoV-tool/index.html?_nw_=1&_anw_=1&spss=epidemic#/"));
+        } else if (R.id.cl_dkzb == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "https://wp.m.163.com/163/html/frontend/2019-nCoV-tool-community/index.html?spss=epidemic#/map"));
+        } else if (id == R.id.cl_wd) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "https://wp.m.163.com/163/page/news/epidemic_hospital/index.html?_nw_=1&_anw_=1&spss=epidemic"));
+        } else if (R.id.cl_sc == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "https://wp.m.163.com/163/html/newsapp/activity/20200311/index.html?spss=epidemic#/home"));
+        } else if (R.id.cl_yx == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "http://www.nhc.gov.cn/xcs/yqtb/list_gzbd.shtml"));
+        } else if (R.id.cl_hd == id) {
+            RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
+                    .withString(KeyCode.Discover.PATH, "http://jksb.zzu.edu.cn/"));
+        }
     }
 
     @Override
@@ -92,7 +119,6 @@ public class MainDiscoverFragment extends BaseFragment<DiscoverFragmentMainBindi
         super.onEvent(event);
         switch (event.getCode()) {
             case EventCode.Discover.TAB_REFRESH:
-
                 break;
         }
     }

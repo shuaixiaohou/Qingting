@@ -148,7 +148,6 @@ public class WebFragment extends BaseFragment<DiscoverFragmentWebBinding> {
 
     @Override
     public void initData() {
-
         mAgentWeb = AgentWebX5.with(this)
                 .setAgentWebParent(mBinding.flContainer, new FrameLayout.LayoutParams(-1, -1))
                 .setIndicatorColorWithHeight(getResources().getColor(R.color.colorPrimary), 1)
@@ -165,8 +164,7 @@ public class WebFragment extends BaseFragment<DiscoverFragmentWebBinding> {
                 .addDownLoadResultListener(mDownLoadResultListener)
                 .createAgentWeb()
                 .ready()
-//                .go(mPath);
-                .go("https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1");
+                .go(mPath);
     }
 
     public WebSettings getSettings() {

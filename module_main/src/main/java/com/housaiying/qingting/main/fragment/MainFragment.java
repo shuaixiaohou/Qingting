@@ -13,6 +13,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.housaiying.qingting.common.Constants;
 import com.housaiying.qingting.common.event.EventCode;
 import com.housaiying.qingting.common.event.FragmentEvent;
+
 import com.housaiying.qingting.common.mvvm.view.BaseFragment;
 import com.housaiying.qingting.main.R;
 import com.housaiying.qingting.main.databinding.MainFragmentMainBinding;

@@ -54,7 +54,7 @@ public class ThirdHelper {
     public ThirdHelper initUM() {
         UMConfigure.setLogEnabled(true);
         UMConfigure.init(mApplication, UMConfigure.DEVICE_TYPE_PHONE, "");
-        PlatformConfig.setWeixin("wxb2a0b79c29b9f928", "52c113e2f70e5364cdd2c20c60bc6c8f");
+        PlatformConfig.setWeixin("wxb2a0b79c29b9f928", "0edd9fa5ed6b82fae67d4ea14ac034ac");
         PlatformConfig.setSinaWeibo(Constants.SINA_ID, Constants.SINA_KEY, "http://sns.whalecloud.com");
         return this;
     }

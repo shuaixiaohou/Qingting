@@ -170,7 +170,7 @@ public class MainUserFragment extends BaseRefreshMvvmFragment<UserFragmentMainBi
             RouterUtil.navigateTo(Constants.Router.Listen.F_FAVORITE);
         } else if (id == R.id.cl_jcgx) {
             ToastUtil.showToast("已是最新版本");
-        } else if (id == R.id.cl_gy || id == R.id.iv_user) {
+        } else if (id == R.id.cl_gy) {
             RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
                     .withString(KeyCode.Discover.PATH, "https://github.com/shuaixiaohou"));
         } else if (id == R.id.cl_zx) {
