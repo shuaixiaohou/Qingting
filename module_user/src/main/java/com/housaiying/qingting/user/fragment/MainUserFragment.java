@@ -172,7 +172,7 @@ public class MainUserFragment extends BaseRefreshMvvmFragment<UserFragmentMainBi
             ToastUtil.showToast("已是最新版本");
         } else if (id == R.id.cl_gy) {
             RouterUtil.navigateTo(mRouter.build(Constants.Router.Discover.F_WEB)
-                    .withString(KeyCode.Discover.PATH, "https://github.com/shuaixiaohou"));
+                    .withString(KeyCode.Discover.PATH, "http://www.housaiying.icoc.bz/"));
         } else if (id == R.id.cl_zx) {
             new AlertDialog.Builder(mActivity)
                     .setMessage("您确定要退出应用吗?")
