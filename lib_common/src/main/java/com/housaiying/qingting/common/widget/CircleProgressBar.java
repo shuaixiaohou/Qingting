@@ -155,16 +155,8 @@ public class CircleProgressBar extends View {
         circlePaint.setStyle(Paint.Style.STROKE); // 设置绘制的圆为空心
         canvas.drawCircle(center, center, radius, circlePaint); // 画底部的空心圆
         RectF oval = new RectF(center - radius, center - radius, center + radius, center + radius); // 圆的外接正方形
-
-        // 绘制颜色渐变圆环
-        // shader类是Android在图形变换中非常重要的一个类。Shader在三维软件中我们称之为着色器，其作用是来给图像着色。
-    /*    LinearGradient linearGradient = new LinearGradient(circleWidth, circleWidth, getMeasuredWidth()
-                - circleWidth, getMeasuredHeight() - circleWidth, colorArray, null, Shader.TileMode.MIRROR);
-        circlePaint.setShader(linearGradient);*/
-        //  circlePaint.setShadowLayer(10, 10, 10, Color.RED);
         circlePaint.setColor(secondColor); // 设置圆弧的颜色
         circlePaint.setStrokeCap(Paint.Cap.ROUND); // 把每段圆弧改成圆角的
-
         alphaAngle = currentValue * 360.0f / maxValue * 1.0f; // 计算每次画圆弧时扫过的角度，这里计算要注意分母要转为float类型，否则alphaAngle永远为0
         canvas.drawArc(oval, -90, alphaAngle, false, circlePaint);
     }
@@ -188,30 +180,6 @@ public class CircleProgressBar extends View {
         textPaint.getTextBounds(percent, 0, percent.length(), bounds); // 获得绘制文字的边界矩形
         Paint.FontMetricsInt fontMetrics = textPaint.getFontMetricsInt(); // 获取绘制Text时的四条线
         int baseline = center + (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom; // 计算文字的基线,方法见http://blog.csdn.net/harvic880925/article/details/50423762
-//        canvas.drawText(percent, center, baseline, textPaint); // 绘制表示进度的文字
-    }
-
-    /**
-     * 设置圆环的宽度
-     *
-     * @param width
-     */
-    public void setCircleWidth(int width) {
-        this.circleWidth = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, width, getResources()
-                .getDisplayMetrics());
-        circlePaint.setStrokeWidth(circleWidth);
-        invalidate();
-    }
-
-    /**
-     * 设置圆环的底色，默认为亮灰色LTGRAY
-     *
-     * @param color
-     */
-    public void setFirstColor(int color) {
-        this.firstColor = color;
-        circlePaint.setColor(firstColor);
-        invalidate();
     }
 
     /**
@@ -222,16 +190,6 @@ public class CircleProgressBar extends View {
     public void setSecondColor(int color) {
         this.secondColor = color;
         circlePaint.setColor(secondColor);
-        invalidate();
-    }
-
-    /**
-     * 设置进度条渐变色颜色数组
-     *
-     * @param colors 颜色数组，类型为int[]
-     */
-    public void setColorArray(int[] colors) {
-        this.colorArray = colors;
         invalidate();
     }
 
@@ -250,37 +208,5 @@ public class CircleProgressBar extends View {
         }
         this.currentValue = percent;
         invalidate();
-    }
-
-    /**
-     * 按进度显示百分比，可选择是否启用数字动画
-     *
-     * @param progress     进度，值通常为0到100
-     * @param useAnimation 是否启用动画，true为启用
-     */
-    public void setProgress(int progress, boolean useAnimation) {
-        int percent = progress * maxValue / 100;
-        if (percent < 0) {
-            percent = 0;
-        }
-        if (percent > 100) {
-            percent = 100;
-        }
-        if (useAnimation) // 使用动画
-        {
-            ValueAnimator animator = ValueAnimator.ofInt(0, percent);
-            animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-                @Override
-                public void onAnimationUpdate(ValueAnimator animation) {
-                    currentValue = (int) animation.getAnimatedValue();
-                    invalidate();
-                }
-            });
-            animator.setInterpolator(new OvershootInterpolator());
-            animator.setDuration(1000);
-            animator.start();
-        } else {
-            setProgress(progress);
-        }
     }
 }

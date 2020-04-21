@@ -45,7 +45,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/ll_purchased"
+                        app:layout_constraintStart_toEndOf="@+id/ll_history"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0">
 
@@ -65,34 +65,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/ll_purchased"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/ll_favorite"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/ll_history"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.0">
-
-                        <ImageView
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:src="@drawable/ic_common_shopcart"
-                            android:tint="@color/colorPrimaryDark" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="待定"
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="12sp" />
-
-                    </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/ll_history"
@@ -101,7 +73,7 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/ll_purchased"
+                        app:layout_constraintEnd_toStartOf="@+id/ll_favorite"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/ll_download"
                         app:layout_constraintTop_toTopOf="parent"

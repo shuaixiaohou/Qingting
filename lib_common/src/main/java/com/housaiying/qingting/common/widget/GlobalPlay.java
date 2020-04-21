@@ -208,10 +208,6 @@ public class GlobalPlay extends View implements ValueAnimator.AnimatorUpdateList
                 });
     }
 
-    public void setImage(@DrawableRes int res) {
-        setBitmap(BitmapFactory.decodeResource(getResources(), res));
-        invalidate();
-    }
 
     public void setBitmap(Bitmap bitmap) {
         mBitmap = bitmap;

@@ -400,8 +400,6 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
                 action.setDisplayList(
                         SHARE_MEDIA.WEIXIN,
                         SHARE_MEDIA.WEIXIN_CIRCLE,
-                        SHARE_MEDIA.QQ,
-                        SHARE_MEDIA.QZONE,
                         SHARE_MEDIA.SINA)
                         .setCallback(uMShareListener).open(config);
                 break;

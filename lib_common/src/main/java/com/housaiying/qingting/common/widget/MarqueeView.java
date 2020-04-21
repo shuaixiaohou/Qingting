@@ -159,12 +159,6 @@ public class MarqueeView extends View implements Runnable {
 
     }
 
-    public void setRepetType(int repetType) {
-        this.repetType = repetType;
-        this.resetInit = true;
-        this.setContent(this.content);
-    }
-
     public void run() {
         while (this.isRoll && !TextUtils.isEmpty(this.content)) {
             try {
@@ -201,15 +195,6 @@ public class MarqueeView extends View implements Runnable {
         }
 
     }
-
-    private void setClickStop(boolean isClickStop) {
-        this.isClickStop = isClickStop;
-    }
-
-    private void setContinueble(int isContinuable) {
-        this.repetType = isContinuable;
-    }
-
     public void setTextDistance(int textdistance2) {
         String black = " ";
         this.oneBlack_width = this.getBlacktWidth();
@@ -271,10 +256,6 @@ public class MarqueeView extends View implements Runnable {
 
     }
 
-    public void setTextSpeed(float speed) {
-        this.speed = speed;
-    }
-
     public void setContent(List<String> strings) {
         this.setTextDistance(this.textDistance1);
         String temString = "";
@@ -321,10 +302,6 @@ public class MarqueeView extends View implements Runnable {
             }
 
         }
-    }
-
-    private void setResetLocation(boolean isReset) {
-        this.isResetLocation = isReset;
     }
 
 }

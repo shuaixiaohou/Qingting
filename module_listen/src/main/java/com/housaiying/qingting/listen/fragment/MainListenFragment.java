@@ -66,7 +66,6 @@ public class MainListenFragment extends BaseFragment<ListenFragmentMainBinding> 
         mBinding.llDownload.setOnClickListener(this);
         mBinding.llHistory.setOnClickListener(this);
         mBinding.llFavorite.setOnClickListener(this);
-        mBinding.llPurchased.setOnClickListener(this);
     }
 
     @Override

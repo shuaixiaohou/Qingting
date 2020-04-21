@@ -33,6 +33,7 @@ public class FavoriteBean {
         this.datetime = datetime;
     }
 
+
     @Generated(hash = 653294794)
     public FavoriteBean() {
     }

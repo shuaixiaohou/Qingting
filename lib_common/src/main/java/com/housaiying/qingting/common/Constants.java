@@ -62,9 +62,7 @@ public interface Constants {
     }
 
     interface SP {
-        String USER = "user";
         String TOKEN = "token";
-        String HOST = "host";
         String CITY_CODE = "city_code";
         String CITY_NAME = "city_name";
         String PROVINCE_CODE = "province_code";
@@ -78,10 +76,6 @@ public interface Constants {
         String CITY_NAME = "郑州";
         String PROVINCE_CODE = "410000";
         String PROVINCE_NAME = "河南";
-    }
-
-    interface Cache {
-        String FACE = "face";
     }
 
 }

@@ -23,12 +23,6 @@ public class NavigateBean {
         this.fragment = fragment;
     }
 
-    public NavigateBean(String path, SupportFragment fragment, ExtraTransaction extraTransaction) {
-        this.path = path;
-        this.fragment = fragment;
-        this.extraTransaction = extraTransaction;
-    }
-
     @Override
     public String toString() {
         return path;

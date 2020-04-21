@@ -23,17 +23,6 @@ public class QingTingUtil {
         }
     }
 
-    public static String toFenShiTian(long min) {
-        if (min < 60)
-            return min + "分钟";
-        else if (min < 60 * 24)
-            return (int) min / 60 + "小时";
-        else if (min < 60 * 24 * 30)
-            return (int) min / 60 / 24 + "天";
-        else
-            return "数月";
-    }
-
     public static String secondToTime(long second) {
         long days = second / 86400;            //转换天数
         second = second % 86400;            //剩余秒数

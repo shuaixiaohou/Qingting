@@ -33,12 +33,6 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         }
         return INSTANCE;
     }
-
-    @VisibleForTesting
-    public static void destroyInstance() {
-        INSTANCE = null;
-    }
-
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
