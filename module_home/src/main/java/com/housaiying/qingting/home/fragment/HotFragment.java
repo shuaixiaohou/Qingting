@@ -78,8 +78,38 @@ public class HotFragment extends BaseRefreshMvvmFragment<HomeFragmentHotBinding,
     public void initListener() {
         super.initListener();
         mBinding.flRank.setOnClickListener(this);
-        mBinding.likeRefresh.setOnClickListener(this);
-        mBinding.layoutAd.setOnClickListener(this);
+        mBinding.flSleep.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 7)
+                        .withString(KeyCode.Home.TITLE, "助眠解压")));
+        mBinding.flLove.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 10)
+                        .withString(KeyCode.Home.TITLE, "情感生活")));
+        mBinding.flHot.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 2)
+                        .withString(KeyCode.Home.TITLE, "热门音乐")));
+        mBinding.flFree.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 3)
+                        .withString(KeyCode.Home.TITLE, "免费小说")));
+        mBinding.flEnglish.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 38)
+                        .withString(KeyCode.Home.TITLE, "英语学习")));
+        mBinding.flXiangsheng.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 12)
+                        .withString(KeyCode.Home.TITLE, "相声评书")));
+        mBinding.flXiaohua.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, AlbumListFragment.LIKE)
+                        .withString(KeyCode.Home.TITLE, "笑话段子")));
+        mBinding.flErtong.setOnClickListener(view ->
+                RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
+                        .withInt(KeyCode.Home.TYPE, 6)
+                        .withString(KeyCode.Home.TITLE, "儿童故事")));
         mBinding.ihLike.setOnClickListener(view ->
                 RouterUtil.navigateTo(mRouter.build(Constants.Router.Home.F_ALBUM_LIST)
                         .withInt(KeyCode.Home.TYPE, AlbumListFragment.LIKE)
