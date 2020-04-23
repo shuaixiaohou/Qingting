@@ -47,8 +47,10 @@ public class HotFragment extends BaseRefreshMvvmFragment<HomeFragmentHotBinding,
     private AlbumAdapter mBabyAdapter;
     private HotMusicAdapter mMusicAdapter;
     private RadioAdapter mRadioAdapter;
+
     public HotFragment() {
     }
+
     @Override
     protected int onBindLayout() {
         return R.layout.home_fragment_hot;
@@ -68,6 +70,7 @@ public class HotFragment extends BaseRefreshMvvmFragment<HomeFragmentHotBinding,
         initMusic();
         initRadio();
     }
+
     @Override
     public void initListener() {
         super.initListener();

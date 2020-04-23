@@ -165,19 +165,6 @@
                     app:lottie_loop="true" />
             </FrameLayout>
 
-
-            <!--   <ImageView
-                   android:id="@+id/iv_next"
-                   android:layout_width="34dp"
-                   android:layout_height="34dp"
-                   android:layout_marginStart="24dp"
-                   android:src="@drawable/ic_home_next"
-                   android:visibility="gone"
-                   android:tint="@color/selector_home_play"
-                   app:layout_constraintBottom_toBottomOf="@+id/fl_play_pause"
-                   app:layout_constraintStart_toEndOf="@+id/fl_play_pause"
-                   app:layout_constraintTop_toTopOf="@+id/fl_play_pause" />-->
-
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lav_next"
                 android:layout_width="40dp"
@@ -190,18 +177,6 @@
                 app:layout_constraintTop_toTopOf="@+id/fl_play_pause"
                 app:lottie_colorFilter="@color/colorPrimary"
                 app:lottie_fileName="lottie_play_next_pre.json" />
-
-            <!--   <ImageView
-                   android:id="@+id/iv_pre"
-                   android:layout_width="34dp"
-                   android:layout_height="34dp"
-                   android:layout_marginEnd="24dp"
-                   android:src="@drawable/ic_home_pre"
-                   android:tint="@color/selector_home_play"
-                   android:visibility="gone"
-                   app:layout_constraintBottom_toBottomOf="@+id/fl_play_pause"
-                   app:layout_constraintEnd_toStartOf="@+id/fl_play_pause"
-                   app:layout_constraintTop_toTopOf="@+id/fl_play_pause" />-->
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lav_pre"

@@ -84,7 +84,7 @@
                 android:id="@+id/tv_zhibo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="直播:"
+                android:text="正播:"
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorHighlight="@color/colorPrimary"
                 android:textSize="12sp" />

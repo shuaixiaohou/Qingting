@@ -9,8 +9,7 @@
     android:orientation="horizontal">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center_vertical"
@@ -40,13 +39,6 @@
                 app:lottie_colorFilter="@color/colorPrimary"
                 app:lottie_fileName="lottie_playing.json"
                 app:lottie_loop="true" />
-
-            <!--      <ImageView
-                      android:id="@+id/iv_playing"
-                      android:layout_width="24dp"
-                      android:layout_height="24dp"
-                      android:tint="@color/colorPrimary"
-                      android:src="@drawable/ic_home_playing" />-->
 
             <TextView
                 android:id="@+id/tv_title"

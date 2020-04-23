@@ -14,7 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -31,13 +30,11 @@ import com.housaiying.qingting.common.util.PermissionPageUtil;
 import com.housaiying.qingting.common.util.RouterUtil;
 import com.housaiying.qingting.common.util.ToastUtil;
 import com.housaiying.qingting.common.widget.GlobalPlay;
-import com.housaiying.qingting.main.dialog.SplashPopup;
 import com.housaiying.qingting.main.fragment.MainFragment;
 import com.housaiying.qingting.main.mvvm.ViewModelFactory;
 import com.housaiying.qingting.main.mvvm.viewmodel.MainViewModel;
 import com.kingja.loadsir.core.LoadLayout;
 import com.lxj.xpopup.XPopup;
-import com.lxj.xpopup.interfaces.SimpleCallback;
 import com.next.easynavigation.utils.NavigationUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.umeng.socialize.ShareAction;
@@ -280,20 +277,6 @@ public class MainActivity extends BaseMvvmActivity<MainViewModel> implements Vie
             }
         });
         mViewModel.getCoverEvent().observe(this, s -> globalplay.play(s));
-        mViewModel.getShowAdEvent().observe(this, new Observer<Void>() {
-            @Override
-            public void onChanged(@Nullable Void aVoid) {
-                new XPopup.Builder(MainActivity.this)
-                        .setPopupCallback(new SimpleCallback() {
-                            @Override
-                            public boolean onBackPressed() {
-                                ActivityUtils.startHomeActivity();
-                                return true;
-                            }
-                        })
-                        .asCustom(new SplashPopup(MainActivity.this)).show();
-            }
-        });
     }
 
     @Override

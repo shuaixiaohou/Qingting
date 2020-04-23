@@ -1,7 +1,6 @@
 package com.housaiying.qingting.common.widget;
 
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,7 +11,6 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.animation.OvershootInterpolator;
 
 import com.housaiying.qingting.common.R;
 

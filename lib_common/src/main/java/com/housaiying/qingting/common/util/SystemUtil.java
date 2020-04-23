@@ -4,9 +4,12 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
 import android.text.format.Formatter;
+
 import java.io.File;
+
 public final class SystemUtil {
     private static final String TAG = "SystemUtils";
+
     /**
      * 获得机身内容总大小
      *
@@ -19,4 +22,4 @@ public final class SystemUtil {
         long totalBlocks = stat.getBlockCount();
         return Formatter.formatFileSize(context, blockSize * totalBlocks);
     }
-    }
+}

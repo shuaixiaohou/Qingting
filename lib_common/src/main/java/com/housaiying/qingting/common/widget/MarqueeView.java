@@ -195,6 +195,7 @@ public class MarqueeView extends View implements Runnable {
         }
 
     }
+
     public void setTextDistance(int textdistance2) {
         String black = " ";
         this.oneBlack_width = this.getBlacktWidth();
