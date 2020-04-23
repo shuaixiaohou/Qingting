@@ -20,7 +20,6 @@ import java.util.Locale;
  * Author: housaiying
  * <br/>Date: 2020/3/6 16:58
  * <br/>Email: 1194959365@qq.com
- * <br/>Description:
  */
 public class PlayRadioAdapter extends BaseQuickAdapter<Schedule, BaseViewHolder> {
     private SimpleDateFormat sdf = new SimpleDateFormat("yy:MM:dd:HH:mm", Locale.getDefault());
