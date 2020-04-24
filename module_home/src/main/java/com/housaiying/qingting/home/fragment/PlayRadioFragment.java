@@ -8,10 +8,8 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.airbnb.lottie.LottieAnimationView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bumptech.glide.Glide;
@@ -45,14 +43,11 @@ import com.ximalaya.ting.android.opensdk.player.service.IXmPlayerStatusListener;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayListControl;
 import com.ximalaya.ting.android.opensdk.player.service.XmPlayerException;
 import com.ximalaya.ting.android.opensdk.util.BaseUtil;
-
 import org.greenrobot.eventbus.EventBus;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
-
 import static com.lxj.xpopup.enums.PopupAnimation.TranslateFromBottom;
 /**
  * Author: housaiying
@@ -161,7 +156,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
 
     }
     private void initProgress(int cur, int dur) {
-        System.out.println("initProgress------------------------");
         if (BaseUtil.isInTime(mSchedule.getStartTime() + "-" + mSchedule.getEndTime()) == 0) {
             SimpleDateFormat sdf = new SimpleDateFormat("yy:MM:dd:HH:mm", Locale.getDefault());
             try {
@@ -217,10 +211,8 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                     tvTitle.setTextColor(mActivity.getResources().getColor(R.color.colorPrimary));
                     if (XmPlayerManager.getInstance(mActivity).isPlaying()) {
                         lavPlaying.playAnimation();
-                        System.out.println("lavPlaying.playAnimation");
                     } else {
                         lavPlaying.pauseAnimation();
-                        System.out.println("lavPlaying.pauseAnimation");
                     }
                 } else {
                     lavPlaying.cancelAnimation();
@@ -312,14 +304,14 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             if (mPlayerManager.hasPreSound()) {
                 mPlayerManager.playPre();
             } else {
-                System.out.println("没有更多");
+                ToastUtil.showToast("没有更多内容");
             }
         } else if (R.id.lav_next == id) {
             mBinding.lavNext.playAnimation();
             if (mPlayerManager.hasNextSound()) {
                 mPlayerManager.playNext();
             } else {
-                System.out.println("没有更多");
+                ToastUtil.showToast("没有更多内容");
             }
         }
     }
@@ -363,7 +355,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     }
     @Override
     public void onPlayStart() {
-        System.out.println("onPlayStart");
         updatePlayStatus();
         if (!mPlayerManager.isBuffering()) {
             playAnim();
@@ -386,7 +377,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     }
     @Override
     public void onSoundPrepared() {
-        System.out.println("onSoundPrepared");
         updatePlayStatus();
     }
     @Override
@@ -396,7 +386,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     }
     @Override
     public void onBufferingStart() {
-        System.out.println("onBufferingStart--------------------------");
         if (mPlayerManager.isPlaying()) {
             bufferingAnim();
         }
@@ -411,11 +400,9 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     }
     @Override
     public void onBufferProgress(int i) {
-        System.out.println("onBufferProgress----------------------------");
     }
     @Override
     public void onPlayProgress(int i, int i1) {
-        System.out.println("onPlayProgress");
         if (mSchedule == null) {
             return;
         }
@@ -423,11 +410,9 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     }
     @Override
     public boolean onError(XmPlayerException e) {
-        System.out.println("onError----------------------------");
         return false;
     }
     private void playAnim() {
-        System.out.println("playAnim");
         if (!isPlaying) {
             mBinding.lavPlayPause.setMinAndMaxFrame(55, 90);
             mBinding.lavPlayPause.loop(false);
@@ -475,7 +460,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
     @SuppressLint("SetTextI18n")
     @Override
     public void onSeeking(SeekParams seekParams) {
-        System.out.println("onSeeking-----------------------");
         TextView indicator = mBinding.isbProgress.getIndicator().getTopContentView().findViewById(R.id.tv_indicator);
         indicator.setText(QingTingUtil.secondToTimeE(seekParams.progress)
                 + "/" + QingTingUtil.secondToTimeE((long) seekParams.seekBar.getMax()));

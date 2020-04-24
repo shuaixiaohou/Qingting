@@ -41,8 +41,6 @@ public class RadioFragment extends BaseRefreshMvvmFragment<HomeFragmentRadioBind
     private RadioHistoryAdapter mHistoryAdapter;
     private RadioAdapter mLocalAdapter;
     private RadioAdapter mTopAdapter;
-    // private String mCityCode;
-
     public RadioFragment() {
     }
 
