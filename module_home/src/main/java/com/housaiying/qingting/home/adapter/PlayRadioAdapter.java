@@ -1,15 +1,12 @@
 package com.housaiying.qingting.home.adapter;
 
 import android.text.TextUtils;
-import android.view.View;
 
-import com.airbnb.lottie.LottieAnimationView;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.housaiying.qingting.home.R;
 import com.ximalaya.ting.android.opensdk.model.live.program.Program;
 import com.ximalaya.ting.android.opensdk.model.live.schedule.Schedule;
-import com.ximalaya.ting.android.opensdk.player.XmPlayerManager;
 import com.ximalaya.ting.android.opensdk.util.BaseUtil;
 
 import java.text.ParseException;
