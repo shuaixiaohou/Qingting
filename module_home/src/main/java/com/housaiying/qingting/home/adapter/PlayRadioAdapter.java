@@ -59,25 +59,5 @@ public class PlayRadioAdapter extends BaseQuickAdapter<Schedule, BaseViewHolder>
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
-
-        if (null != XmPlayerManager.getInstance(mContext).getCurrSound()) {
-            LottieAnimationView lavPlaying = helper.getView(R.id.lav_playing);
-            Schedule schedule = (Schedule) XmPlayerManager.getInstance(mContext).getCurrSound();
-            if (schedule.getDataId() == item.getDataId()) {
-                lavPlaying.setVisibility(View.VISIBLE);
-                helper.setTextColor(R.id.tv_title, mContext.getResources().getColor(R.color.colorPrimary));
-                if (XmPlayerManager.getInstance(mContext).isPlaying()) {
-                    lavPlaying.playAnimation();
-                } else {
-                    lavPlaying.pauseAnimation();
-                }
-            } else {
-                helper.setTextColor(R.id.tv_title, mContext.getResources().getColor(R.color.textColorPrimary));
-                lavPlaying.cancelAnimation();
-                lavPlaying.setVisibility(View.GONE);
-            }
-
-        }
     }
 }

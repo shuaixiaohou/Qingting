@@ -1,7 +1,7 @@
 package com.housaiying.qingting.home.fragment;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -54,7 +54,6 @@ import java.util.List;
 import java.util.Locale;
 
 import static com.lxj.xpopup.enums.PopupAnimation.TranslateFromBottom;
-
 /**
  * Author: housaiying
  * <br/>Date: 2020/3/5 11:16
@@ -77,29 +76,24 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             isTouch = false;
         }
     };
-
     @Override
     protected int onBindLayout() {
         return R.layout.home_fragment_play_radio;
     }
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mView.setBackgroundColor(Color.WHITE);
     }
-
     @Override
     protected boolean enableSwipeBack() {
         return false;
     }
-
     @Override
     protected void loadView() {
         super.loadView();
         clearStatus();
     }
-
     @Override
     protected void initView() {
         mSimpleTitleBar.getLeftCustomView().findViewById(R.id.iv_left).setRotation(-90);
@@ -117,7 +111,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
 
         mPlayRadioPopup = new PlayRadioPopup(mActivity);
     }
-
     @Override
     public void initListener() {
         super.initListener();
@@ -133,7 +126,7 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
         mBinding.isbProgress.setOnSeekChangeListener(this);
         mBinding.isbProgress.setOnTouchListener(this);
     }
-
+    @SuppressLint("SetTextI18n")
     @Override
     public void initData() {
         mHandler.postDelayed(() -> {
@@ -143,11 +136,9 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                 mBinding.tvRadioName.setText(mSchedule.getRadioName());
                 mBinding.tvPlaycount.setText(QingTingUtil.toWanYi(mSchedule.getRadioPlayCount()) + "人听过");
                 mViewModel.getPrograms(String.valueOf(mSchedule.getRadioId()));
-
                 mBinding.tvTime.setText(mSchedule.getStartTime().substring(mSchedule.getStartTime().length() - 5) + "~"
                         + mSchedule.getEndTime().substring(mSchedule.getEndTime().length() - 5));
                 mBinding.isbProgress.setUserSeekAble(mPlayerManager.getCurrPlayType() == XmPlayListControl.PLAY_SOURCE_TRACK);
-
                 Program program = mSchedule.getRelatedProgram();
                 mBinding.tvProgramName.setText(program.getProgramName());
                 Glide.with(this).load(program.getBackPicUrl()).into(mBinding.ivCover);
@@ -163,14 +154,14 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                 initProgress(mPlayerManager.getPlayCurrPositon(), mPlayerManager.getDuration());
             } catch (Exception e) {
                 e.printStackTrace();
-                ToastUtil.showToast("网络异常");
+                System.out.println("网络异常");
                 pop();
             }
         }, 200);
 
     }
-
     private void initProgress(int cur, int dur) {
+        System.out.println("initProgress------------------------");
         if (BaseUtil.isInTime(mSchedule.getStartTime() + "-" + mSchedule.getEndTime()) == 0) {
             SimpleDateFormat sdf = new SimpleDateFormat("yy:MM:dd:HH:mm", Locale.getDefault());
             try {
@@ -189,7 +180,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             mBinding.isbProgress.setProgress((float) cur / 1000);
         }
     }
-
     @Override
     public void initViewObservable() {
         mViewModel.getProgramsEvent().observe(this, programList ->
@@ -203,12 +193,10 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                 mPlayRadioPopup.getTomorrowAdapter().setNewData(schedules));
         mViewModel.getPauseAnimEvent().observe(this, aVoid -> pauseAnim());
     }
-
     private void updatePlayStatus() {
         updatePlayStatus(mPlayRadioPopup.getYestodayAdapter());
         updatePlayStatus(mPlayRadioPopup.getTodayAdapter());
     }
-
     private void updatePlayStatus(PlayRadioAdapter adapter) {
         if (adapter == null) {
             return;
@@ -218,7 +206,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             return;
         }
         List<Schedule> schedules = adapter.getData();
-
         for (int i = 0; i < schedules.size(); i++) {
             LottieAnimationView lavPlaying = (LottieAnimationView) adapter
                     .getViewByPosition(i, R.id.lav_playing);
@@ -230,8 +217,10 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
                     tvTitle.setTextColor(mActivity.getResources().getColor(R.color.colorPrimary));
                     if (XmPlayerManager.getInstance(mActivity).isPlaying()) {
                         lavPlaying.playAnimation();
+                        System.out.println("lavPlaying.playAnimation");
                     } else {
                         lavPlaying.pauseAnimation();
+                        System.out.println("lavPlaying.pauseAnimation");
                     }
                 } else {
                     lavPlaying.cancelAnimation();
@@ -243,22 +232,18 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             }
         }
     }
-
     @Override
     public SimpleBarStyle onBindBarLeftStyle() {
         return SimpleBarStyle.LEFT_ICON;
     }
-
     @Override
     public Integer onBindBarLeftIcon() {
         return R.drawable.ic_common_titlebar_back;
     }
-
     @Override
     public Integer[] onBindBarRightIcon() {
         return new Integer[]{R.drawable.ic_home_dingshi};
     }
-
     @Override
     public void onRight1Click(View v) {
         super.onRight1Click(v);
@@ -270,13 +255,11 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             }
         }).asCustom(mSchedulePopup).show();
     }
-
     @Override
     public void onLeftIconClick(View v) {
         super.onLeftIconClick(v);
         pop();
     }
-
     @Override
     public boolean onBackPressedSupport() {
         if (super.onBackPressedSupport()) {
@@ -287,24 +270,20 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
         }
         return false;
     }
-
     @Override
     public void onSupportVisible() {
         super.onSupportVisible();
         EventBus.getDefault().post(new ActivityEvent(EventCode.Main.HIDE_GP));
     }
-
     @Override
     public void onSupportInvisible() {
         super.onSupportInvisible();
         EventBus.getDefault().post(new ActivityEvent(EventCode.Main.SHOW_GP));
     }
-
     @Override
     protected boolean enableLazy() {
         return false;
     }
-
     @Override
     public void onClick(View v) {
         int id = v.getId();
@@ -333,18 +312,17 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             if (mPlayerManager.hasPreSound()) {
                 mPlayerManager.playPre();
             } else {
-                ToastUtil.showToast("没有更多");
+                System.out.println("没有更多");
             }
         } else if (R.id.lav_next == id) {
             mBinding.lavNext.playAnimation();
             if (mPlayerManager.hasNextSound()) {
                 mPlayerManager.playNext();
             } else {
-                ToastUtil.showToast("没有更多");
+                System.out.println("没有更多");
             }
         }
     }
-
     @Override
     public void onNewBundle(Bundle args) {
         super.onNewBundle(args);
@@ -357,89 +335,72 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             }
         }, 100);
     }
-
     @Override
     public void onSelected(int type, long time) {
-
     }
-
     @Override
     public void onStartGetAdsInfo() {
     }
-
     @Override
     public void onGetAdsInfo(AdvertisList advertisList) {
     }
-
     @Override
     public void onAdsStartBuffering() {
         bufferingAnim();
     }
-
     @Override
     public void onAdsStopBuffering() {
     }
-
     @Override
     public void onStartPlayAds(Advertis advertis, int i) {
         bufferingAnim();
     }
-
     @Override
     public void onCompletePlayAds() {
     }
-
     @Override
     public void onError(int i, int i1) {
     }
-
     @Override
     public void onPlayStart() {
+        System.out.println("onPlayStart");
         updatePlayStatus();
         if (!mPlayerManager.isBuffering()) {
-
             playAnim();
         }
-
     }
-
     @Override
     public void onPlayPause() {
         updatePlayStatus();
         pauseAnim();
     }
-
     @Override
     public void onPlayStop() {
         updatePlayStatus();
         pauseAnim();
     }
-
     @Override
     public void onSoundPlayComplete() {
-
         updatePlayStatus();
         mViewModel.onPlayComplete(mPlayerManager);
     }
-
     @Override
     public void onSoundPrepared() {
+        System.out.println("onSoundPrepared");
         updatePlayStatus();
     }
-
     @Override
     public void onSoundSwitch(PlayableModel playableModel, PlayableModel playableModel1) {
         updatePlayStatus();
         initData();
     }
-
     @Override
     public void onBufferingStart() {
+        System.out.println("onBufferingStart--------------------------");
         if (mPlayerManager.isPlaying()) {
             bufferingAnim();
         }
     }
-
     @Override
     public void onBufferingStop() {
         if (mPlayerManager.isPlaying()) {
@@ -448,28 +409,26 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             pauseAnim();
         }
     }
-
     @Override
     public void onBufferProgress(int i) {
+        System.out.println("onBufferProgress----------------------------");
     }
-
     @Override
     public void onPlayProgress(int i, int i1) {
+        System.out.println("onPlayProgress");
         if (mSchedule == null) {
             return;
         }
         initProgress(i, i1);
-
     }
-
     @Override
     public boolean onError(XmPlayerException e) {
+        System.out.println("onError----------------------------");
         return false;
     }
-
     private void playAnim() {
+        System.out.println("playAnim");
         if (!isPlaying) {
-
             mBinding.lavPlayPause.setMinAndMaxFrame(55, 90);
             mBinding.lavPlayPause.loop(false);
             mBinding.lavPlayPause.playAnimation();
@@ -477,7 +436,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             mBinding.lavBuffering.setVisibility(View.GONE);
             mBinding.lavPlayPause.setVisibility(View.VISIBLE);
             mBinding.lavPlayPause.addAnimatorListener(new AnimatorListenerAdapter() {
-
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     super.onAnimationEnd(animation);
@@ -487,7 +445,6 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
             });
         }
     }
-
     private void playingAnim() {
         mBinding.lavPlayPause.removeAllAnimatorListeners();
         isPlaying = true;
@@ -498,16 +455,13 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
         mBinding.lavBuffering.setVisibility(View.GONE);
         mBinding.lavPlayPause.setVisibility(View.VISIBLE);
     }
-
     private void bufferingAnim() {
-
         mBinding.lavPlayPause.cancelAnimation();
         mBinding.lavBuffering.playAnimation();
         isPlaying = false;
         mBinding.lavPlayPause.setVisibility(View.GONE);
         mBinding.lavBuffering.setVisibility(View.VISIBLE);
     }
-
     private void pauseAnim() {
         mBinding.lavBuffering.cancelAnimation();
         mBinding.lavPlayPause.removeAllAnimatorListeners();
@@ -518,43 +472,37 @@ public class PlayRadioFragment extends BaseMvvmFragment<HomeFragmentPlayRadioBin
         mBinding.lavBuffering.setVisibility(View.GONE);
         mBinding.lavPlayPause.setVisibility(View.VISIBLE);
     }
-
+    @SuppressLint("SetTextI18n")
     @Override
     public void onSeeking(SeekParams seekParams) {
+        System.out.println("onSeeking-----------------------");
         TextView indicator = mBinding.isbProgress.getIndicator().getTopContentView().findViewById(R.id.tv_indicator);
         indicator.setText(QingTingUtil.secondToTimeE(seekParams.progress)
                 + "/" + QingTingUtil.secondToTimeE((long) seekParams.seekBar.getMax()));
     }
-
     @Override
     public void onStartTrackingTouch(IndicatorSeekBar seekBar) {
         isTouch = true;
     }
-
     @Override
     public void onStopTrackingTouch(IndicatorSeekBar seekBar) {
         mPlayerManager.seekTo(seekBar.getProgress() * 1000);
         mHandler.postDelayed(touchRunable, 200);
     }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
-
         mPlayerManager.removePlayerStatusListener(this);
         mPlayerManager.removeAdsStatusListener(this);
     }
-
     @Override
     public Class<PlayRadioViewModel> onBindViewModel() {
         return PlayRadioViewModel.class;
     }
-
     @Override
     public ViewModelProvider.Factory onBindViewModelFactory() {
         return ViewModelFactory.getInstance(mApplication);
     }
-
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
