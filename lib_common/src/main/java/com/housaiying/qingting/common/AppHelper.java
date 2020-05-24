@@ -57,13 +57,13 @@ public class AppHelper {
 
 
     public AppHelper initXmlyPlayer() {
-        try {
-            Method method = XmPlayerConfig.getInstance(mApplication).getClass().getDeclaredMethod("setUseSystemPlayer", boolean.class);
-            method.setAccessible(true);
-            method.invoke(XmPlayerConfig.getInstance(mApplication), true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Method method = XmPlayerConfig.getInstance(mApplication).getClass().getDeclaredMethod("setUseSystemPlayer", boolean.class);
+//            method.setAccessible(true);
+//            method.invoke(XmPlayerConfig.getInstance(mApplication), true);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         NotificationColorUtils.isTargerSDKVersion24More = true;
         try {

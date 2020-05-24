@@ -2,6 +2,8 @@ package com.housaiying.qingting.home.dialog;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -18,6 +20,7 @@ import com.housaiying.qingting.common.util.ToastUtil;
 import com.housaiying.qingting.home.R;
 import com.housaiying.qingting.home.adapter.PlayRadioAdapter;
 import com.lxj.xpopup.core.BottomPopupView;
+import com.ximalaya.ting.android.opensdk.model.live.radio.Radio;
 import com.ximalaya.ting.android.opensdk.model.live.schedule.Schedule;
 import com.ximalaya.ting.android.opensdk.player.XmPlayerManager;
 
@@ -50,7 +53,8 @@ public class PlayRadioPopup extends BottomPopupView implements View.OnClickListe
     private RecyclerView rvYestoday, rvToday, rvTomorrow;
     private PlayRadioAdapter mYestodayAdapter, mTodayAdapter, mTomorrowAdapter;
     private Context mContext;
-
+    private XmPlayerManager mPlayerServiceManager;
+    private List<Radio> mRadios = new ArrayList<Radio>();
     public PlayRadioPopup(@NonNull Context context) {
         super(context);
         mContext = context;
@@ -137,7 +141,16 @@ public class PlayRadioPopup extends BottomPopupView implements View.OnClickListe
                     return;
                 }
                 position = mYestodayAdapter.getData().size() + position;
-                XmPlayerManager.getInstance(mContext).playSchedule(list, position);
+             //   XmPlayerManager.getInstance(mContext).playSchedule(list, position);
+                Radio radio = mRadios.get(position);
+                mPlayerServiceManager.getInstance(mContext).playLiveRadioForSDK(radio,-1,-1);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        String curPlayUrl = mPlayerServiceManager.getCurPlayUrl();
+                        Log.e("tag",curPlayUrl+"");
+                    }
+                },10000);
             } catch (ParseException e) {
                 e.printStackTrace();
             }

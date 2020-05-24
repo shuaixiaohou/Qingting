@@ -5,14 +5,9 @@
             <solid android:color="@color/white" />
         </shape>
     </item>
-    <item android:bottom="100dp">
+    <item >
         <bitmap
             android:gravity="fill_vertical"
             android:src="@drawable/logo" />
-    </item>
-    <item android:bottom="50dp">
-        <bitmap
-            android:gravity="bottom"
-            android:src="@drawable/main_logo" />
     </item>
 </layer-list>
