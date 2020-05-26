@@ -5,7 +5,7 @@
             <solid android:color="@color/white" />
         </shape>
     </item>
-    <item >
+    <item>
         <bitmap
             android:gravity="fill_vertical"
             android:src="@drawable/logo" />

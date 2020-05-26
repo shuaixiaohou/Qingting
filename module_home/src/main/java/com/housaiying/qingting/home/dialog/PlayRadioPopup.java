@@ -55,6 +55,7 @@ public class PlayRadioPopup extends BottomPopupView implements View.OnClickListe
     private Context mContext;
     private XmPlayerManager mPlayerServiceManager;
     private List<Radio> mRadios = new ArrayList<Radio>();
+
     public PlayRadioPopup(@NonNull Context context) {
         super(context);
         mContext = context;
@@ -141,16 +142,16 @@ public class PlayRadioPopup extends BottomPopupView implements View.OnClickListe
                     return;
                 }
                 position = mYestodayAdapter.getData().size() + position;
-             //   XmPlayerManager.getInstance(mContext).playSchedule(list, position);
+                //   XmPlayerManager.getInstance(mContext).playSchedule(list, position);
                 Radio radio = mRadios.get(position);
-                mPlayerServiceManager.getInstance(mContext).playLiveRadioForSDK(radio,-1,-1);
+                mPlayerServiceManager.getInstance(mContext).playLiveRadioForSDK(radio, -1, -1);
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         String curPlayUrl = mPlayerServiceManager.getCurPlayUrl();
-                        Log.e("tag",curPlayUrl+"");
+                        Log.e("tag", curPlayUrl + "");
                     }
-                },10000);
+                }, 10000);
             } catch (ParseException e) {
                 e.printStackTrace();
             }

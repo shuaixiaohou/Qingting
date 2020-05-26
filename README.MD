@@ -102,11 +102,12 @@ sourceSets {
             }
         }
 }
+
 ### 主要用到的开源库
 * 快速切面编程开源库 
 * 喜马拉雅SDK http://open.ximalaya.com/
 * fragmentation https://github.com/YoKeyword/Fragmentation
-* okhttp https://github.com/square/okhttp 
+* okhttp https://github.com/square/okhttp
 * retrofit https://github.com/square/retrofit
 * rxpermissions 权限 https://github.com/tbruyelle/RxPermissions
 * BaseRecyclerViewAdapterHelper https://github.com/CymChad/BaseRecyclerViewAdapterHelper
