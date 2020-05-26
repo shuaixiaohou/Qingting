@@ -102,7 +102,6 @@ sourceSets {
             }
         }
 }
-
 ### 主要用到的开源库
 * 快速切面编程开源库 
 * 喜马拉雅SDK http://open.ximalaya.com/
