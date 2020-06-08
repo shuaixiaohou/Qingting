@@ -14,6 +14,7 @@ import com.ximalaya.ting.android.sdkdownloader.model.XmDownloadAlbum;
 /**
  * Created by housaiying
  * on 2020/3/17
+ * 适配器
  */
 public class DownloadAlbumAdapter extends BaseQuickAdapter<XmDownloadAlbum, BaseViewHolder> {
     public DownloadAlbumAdapter(int layoutResId) {
