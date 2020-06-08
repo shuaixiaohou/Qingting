@@ -25,6 +25,7 @@ public class PlayHistoryBeanDao extends AbstractDao<PlayHistoryBean, Long> {
     public static final String TABLENAME = "PLAY_HISTORY_BEAN";
     private final TrackConverter trackConverter = new TrackConverter();
     private final ScheduleConverter scheduleConverter = new ScheduleConverter();
+
     public PlayHistoryBeanDao(DaoConfig config) {
         super(config);
     }
