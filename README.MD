@@ -1,4 +1,5 @@
-﻿在 Google I/O 2017 大会上，Google 推出了新的组件库 - Android Architecture Components，官方文档做的很详细，分别介绍了各个组件的应用场景和使用方式，这无疑会推进 Android MVVM 模式的发展。关于 MVVM 这里不做过多介绍，如果有需要可以自行搜索。
+Java
+采用Android MVVM框架高仿喜马拉雅APP
 正文
 Android Architecture Components 简介
 先来看一下 Android Architecture Components 包含哪些内容：
